@@ -1,19 +1,26 @@
-// @import 'mixins';
+@import 'mixins';
 
 html {
-    // font-size: 12px; // the rest in rem
+    font-size: 12px;
     // @include breakpoint (mobile-screen) {
     //     font-size: 14px; 
     // }
-    // @include breakpoint(tablet-screen) {
-    //     font-size: 18px;
-    // }
-    // @include breakpoint(normal-screen) {
-    //     font-size: 20px;
-    // }
-    // @include breakpoint(wide-screen) {
-    //     font-size: 24px;
-    // }
+    @include breakpoint(tablet-screen) {
+        font-size: 14px;
+    }
+    @include breakpoint(normal-screen) {
+        font-size: 16px;
+    }
+    @include breakpoint(wide-screen) {
+        font-size: 18px;
+    }
+}
+
+body {
     display: grid;
+    width: 100vw;
+    min-height: 100vh;
+    grid-template-rows: 95% 5%;
+    grid-auto-flow: row;
 }
 

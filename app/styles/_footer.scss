@@ -1,0 +1,16 @@
+@import 'mixins';
+
+footer{
+    align-self: end;
+    padding: 5px;
+    @include breakpoint(tablet-screen) {
+        padding: 7px 10px;
+    }
+    @include breakpoint(wide-screen) {
+        padding: 10px 15px;
+    }
+    background-color: black;
+    color: white;
+    height: 20px;
+    font-size: 0.9rem;
+}

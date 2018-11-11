@@ -1,0 +1,19 @@
+// @import 'mixins';
+
+html {
+    // font-size: 12px; // the rest in rem
+    // @include breakpoint (mobile-screen) {
+    //     font-size: 14px; 
+    // }
+    // @include breakpoint(tablet-screen) {
+    //     font-size: 18px;
+    // }
+    // @include breakpoint(normal-screen) {
+    //     font-size: 20px;
+    // }
+    // @include breakpoint(wide-screen) {
+    //     font-size: 24px;
+    // }
+    display: grid;
+}
+

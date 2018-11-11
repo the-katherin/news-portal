@@ -1,0 +1,54 @@
+@import 'mixins';
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: $topbar-height;
+    background: $topbar-color;
+    display: grid;
+    grid-template-areas: ". title button";
+    grid-auto-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    color: $topbar-font-color;
+
+    font-size: 14px; // or inherit from html
+
+    @include breakpoint(tablet-screen) {
+        font-size: 18px;
+    }
+    @include breakpoint(normal-screen) {
+        font-size: 20px;
+    }
+    @include breakpoint(wide-screen) {
+        font-size: 24px;
+    }
+
+    &__title {
+        grid-area: title;
+        font-family: 'abelregular';
+        font-size: 1.5em;
+    }
+    
+    &__button {
+        grid-area: button;
+        justify-self: end;
+        text-align: right;
+        padding-right: 10px;
+        @include breakpoint(tablet-screen) {
+            padding-right: 20px;
+        }
+        @include breakpoint(wide-screen) {
+            padding-right: 30px;
+        }
+        font-family: 'news_cyclebold';
+        font-size: 0.9em;
+        cursor: pointer;
+        &:hover{
+            color: $topbar-hover-font-color;
+        }
+    }
+}

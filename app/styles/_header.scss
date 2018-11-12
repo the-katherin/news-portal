@@ -7,14 +7,14 @@
     right: 0;
     z-index: 1000;
     height: $topbar-height;
-    background: $topbar-color;
-    box-shadow: 0px 3px 5px -1px rgba(117,117,117,1);
     display: grid;
     grid-template-areas: ". title button";
     grid-auto-columns: 1fr;
     align-items: center;
     justify-items: center;
     color: $topbar-font-color;
+    background: $topbar-color;
+    box-shadow: 0px 3px 5px -1px rgba(117,117,117,1);
 
     font-size: 14px; // or inherit from html
 

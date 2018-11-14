@@ -1,6 +1,8 @@
 import './styles/main.scss';
 
-import { urlForEverything, urlForSources, getData } from './js/newsApiService';
+// todo rename to main js
+
+import NewsService, { urlForEverything, urlForSources, getData } from './js/newsApiService';
 
 const doc = document;
 const newsContainer = doc.getElementById('news-list');
@@ -10,25 +12,15 @@ const CHANNELS_LIST_POSITION_Y = 40;
 const append = (parent, el) => parent.appendChild(el);
 const createNode = element => doc.createElement(element);
 
-// todo split to different functions or move to service repo
-async function loadNews() {
-    const { articles } = await getData(urlForEverything);
-    insertArticles(articles);
-    console.log(articles);
-    console.log('done');
-}
 
-async function loadSources() {
-    const { sources } = await getData(urlForSources);
-    renderChannels(sources);
-    console.log(sources);
-    console.log('done');
-    // parseDate();
-}
 
-loadNews();
+const newsServiceInstance = new NewsService();
+newsServiceInstance.getChannels();
+//console.log(newsServiceInstance.channels);
 
-loadSources();
+
+
+
 
 const onChooseChannelButtonClick = e => {
     scrollTo(0, CHANNELS_LIST_POSITION_Y);
@@ -121,6 +113,27 @@ const insertArticles = articles => {
 
     });
 }
+
+// todo split to different functions or move to service repo
+async function loadNews() {
+    const { articles } = await getData(urlForEverything);
+    insertArticles(articles);
+    console.log(articles);
+    console.log('done');
+}
+
+async function loadSources() {
+    const { sources } = await getData(urlForSources);
+    renderChannels(sources);
+    console.log(sources);
+    console.log('done');
+    // parseDate();
+}
+
+loadNews();
+
+loadSources();
+
 
 
 

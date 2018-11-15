@@ -31,12 +31,12 @@
     padding: 15px;
     margin-right: 10px;
     margin-bottom: 10px;
-    cursor: pointer;
 }  
 
 .channels-list{
    
     .channel {
+        cursor: pointer;
         max-width: 150px;
 
         @include breakpoint(normal-screen) {
@@ -93,7 +93,9 @@
                 max-width: 500px;
             }
         }
-
+        .news-title{
+            cursor: pointer;
+        }
         .news-info {
             font-size: 0.8rem;
         }

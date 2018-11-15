@@ -1,24 +1,24 @@
 @import 'mixins';
 
 html {
-    font-size: 12px;
-    // @include breakpoint (mobile-screen) {
-    //     font-size: 14px; 
-    // }
+    font-size: 14px;
+    
     @include breakpoint(tablet-screen) {
-        font-size: 14px;
-    }
-    @include breakpoint(normal-screen) {
         font-size: 16px;
     }
-    @include breakpoint(wide-screen) {
+    @include breakpoint(normal-screen) {
         font-size: 18px;
     }
+    @include breakpoint(wide-screen) {
+        font-size: 20x;
+    }
+    font-family: 'news_cycleregular';
 }
 
 body {
     display: grid;
-    width: 100vw;
+    justify-content: stretch;
+    width: 97vw;
     min-height: 100vh;
     grid-template-rows: 95% 5%;
     grid-auto-flow: row;

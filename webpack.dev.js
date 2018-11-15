@@ -24,6 +24,3 @@ module.exports = merge(common, {
         ]
     },
 });
-
-//see also webpack bookmarks
-// TODO: delete raw-loader copy-webpack

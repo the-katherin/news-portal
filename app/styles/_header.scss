@@ -16,7 +16,7 @@
     background: $topbar-color;
     box-shadow: 0px 3px 5px -1px rgba(117,117,117,1);
 
-    font-size: 14px; // or inherit from html
+    font-size: 14px;
 
     @include breakpoint(tablet-screen) {
         font-size: 18px;

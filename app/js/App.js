@@ -55,7 +55,7 @@ export default class App {
                 <h3 class="channel__name">${name}</h3>
                 <span class='channel__category'>${category}</span>
                 <p class="channel__description">${description}</p>
-                 <a href=${url} target='_blank'>Link</a>
+                 <a href=${url} target='_blank' class="channel__link">Link</a>
             `
             this.channelsContainer.appendChild(channelItem);
 
@@ -93,7 +93,7 @@ export default class App {
                     <div class='news-info'> 
                         <span class='news-date'>${new Date(publishedAt).toUTCString()} | </span>
                         <span className="news-source">${name}</span>
-                    </div>
+                </div>
             </div>`;
 
             newsContainer.appendChild(newsItem);

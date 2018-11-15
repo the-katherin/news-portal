@@ -28,7 +28,7 @@
 
 .channel, .news {
     border: 1px solid grey;
-    padding: 5px;
+    padding: 15px;
     margin-right: 10px;
     margin-bottom: 10px;
     cursor: pointer;
@@ -38,16 +38,64 @@
    
     .channel {
         max-width: 150px;
+
+        @include breakpoint(normal-screen) {
+            max-width: 200px;
+        }
+        @include breakpoint(wide-screen) {
+            max-width: 250px;
+        }
+
+        &__name {
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 1.1;
+        }
+        &__category {
+            border: 1px solid grey;
+            padding: 0px 5px;
+            border-radius: 20%;
+            font-size: 0.8rem;
+        }
+        &__link{
+            font-size: 0.8rem;
+            color: blue;
+        }
+
     }
 }
 
 .news-list {
 
     .news {
-        max-width: 200px;
+        max-width: 250px;
 
-        .news__image{
-            max-width: 200px;
+        @include breakpoint (mobile-screen) {
+            max-width: 300px;; 
+        }
+        @include breakpoint(normal-screen) {
+            max-width: 350px;
+        }
+        @include breakpoint(wide-screen) {
+            max-width: 500px;
+        }
+
+        &__image{
+             max-width: 250px;
+
+             @include breakpoint (mobile-screen) {
+                 max-width: 300px; 
+            }
+            @include breakpoint(normal-screen) {
+                max-width: 350px;
+            }
+            @include breakpoint(wide-screen) {
+                max-width: 500px;
+            }
+        }
+
+        .news-info {
+            font-size: 0.8rem;
         }
     }
 }

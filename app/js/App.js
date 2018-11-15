@@ -1,37 +1,52 @@
+import NewsRepo from './NewsRepo';
+
 export default class App {
     constructor() {
-
+        this.channelsContainer = document.getElementById('channels-list');
+        this.chooseChannelButton = document.getElementById('choose-channel-button');
     }
 
-    onChannelChoose (e) {
+    addEventListeners() {
+        this.chooseChannelButton.addEventListener('click', this.onChooseChannelButtonClick);
+        this.channelsContainer.addEventListener('click', this.onChannelChoose.bind(this));
+    }
+
+
+    async onChannelChoose(e) {
+
+        const mainContainer = document.getElementById('main-container');
         const { target } = e;
         const channelId = target.id || target.parentElement.id;
-        console.log(target.id);
-        console.log(target.parentElement.id); //
-        console.log(channelId);
+
+        if (channelId) {
+            await NewsRepo.getArticles(channelId);
+            const { articles } = NewsRepo;
+            this.renderArticles(articles);
+            mainContainer.classList.add('main--hide-channels');
+            scrollTo(0, 0);
+        }
     }
 
-    onChooseChannelButtonClick (e) {
-        const CHANNELS_LIST_POSITION_Y = 40;
-        scrollTo(0, CHANNELS_LIST_POSITION_Y);
+    onChooseChannelButtonClick(e) {
+        scrollTo(0, 0);
+        const mainContainer = document.getElementById('main-container');
 
-        const channelsContainer = doc.getElementById('channels-list');
-        channelsContainer.classList.toggle('channels-list--show');
-
-        console.log('clicked');
+        if (mainContainer.classList.contains('main--hide-channels')) {
+            mainContainer.classList.remove('main--hide-channels');
+        };
     }
 
-    renderChannels (channels) {
+    renderChannels(channels = []) {
         channels.map(channel => {
             const {
-                category,
-                description,
-                id,
-                name,
-                url,
+                category = '',
+                description = '',
+                id = '',
+                name = '',
+                url = '',
             } = channel;
 
-            const channelItem = createNode('div');
+            const channelItem = document.createElement('div');
             channelItem.classList.add('channel');
             channelItem.setAttribute('id', `${id}`);
 
@@ -42,13 +57,55 @@ export default class App {
                 <p class="channel__description">${description}</p>
                  <a href=${url} target='_blank'>Link</a>
             `
-            append(channelsContainer, channelItem);
+            this.channelsContainer.appendChild(channelItem);
 
         });
     }
 
-    renderArticles () {
+    renderArticles(articles = []) {
+        const newsContainer = document.getElementById('news-list');
+        newsContainer.innerHTML = "";
 
+        articles.map(article => {
+            const {
+                author = 'not specified',
+                description = '',
+                publishedAt = 'not specified',
+                source: { name },
+                title = 'Title',
+                url = '',
+                urlToImage = '',
+            } = article;
+
+            const newsItem = document.createElement('div');
+            newsItem.classList.add('news-list__item', 'news');
+
+
+            newsItem.innerHTML =
+                `
+                <img class='news__image' src=${urlToImage || ''}>
+                <div className="news__content"> 
+                    <h2 class='news-title'>
+                            <a href=${url} target='_blank'>${title}</a>
+                    </h2>
+                    <p class='news-description'>${description}</p>
+                    <p classs='news-author'>${author || ''}</p>
+                    <div class='news-info'> 
+                        <span class='news-date'>${new Date(publishedAt).toUTCString()} | </span>
+                        <span className="news-source">${name}</span>
+                    </div>
+            </div>`;
+
+            newsContainer.appendChild(newsItem);
+
+        });
+    }
+
+    async init() {
+        await NewsRepo.getChannels();
+        const { channels } = NewsRepo;
+        this.renderChannels(channels);
+        this.addEventListeners();
     }
 
 }

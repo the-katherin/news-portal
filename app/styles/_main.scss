@@ -1,3 +1,53 @@
-main {
-    margin-top: $main-container-margin-top;
+.main {
+    margin-top: $main-container-margin-top + 10px;
+}
+
+.main--show-channels {
+    .channels-list {
+        display: flex;
+    }
+    .news-list {
+        display: none;
+    }
+}
+
+.main--hide-channels{
+    .channels-list {
+        display: none;
+    }
+    .news-list {
+        display: flex;
+    }
+}
+
+.channels-list, .news-list {
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.channel, .news {
+    border: 1px solid grey;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}  
+
+.channels-list{
+   
+    .channel {
+        max-width: 150px;
+    }
+}
+
+.news-list {
+
+    .news {
+        max-width: 200px;
+
+        .news__image{
+            max-width: 200px;
+        }
+    }
 }

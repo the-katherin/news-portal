@@ -8,12 +8,12 @@ module.exports = merge(common, {
     devtool: 'inline-source-map',
     devServer: {
         before: (app, server) => {
-            server._watch(`app/**.html`); //for html hot reload
+            server._watch(`app/**.html`);
         },
         contentBase: path.join(__dirname, "dist"),
-        hot: true, // don't need HMR plugin if in package json --hot is defined
+        hot: true,
         overlay: true,
-        watchContentBase: true //doesn't help with html
+        watchContentBase: true,
     },
     module: {
         rules: [

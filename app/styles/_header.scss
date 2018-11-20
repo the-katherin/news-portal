@@ -6,12 +6,10 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    min-width: 320px;
     height: $topbar-height;
-    display: grid;
-    grid-template-areas: ". title button";
-    grid-auto-columns: 1fr;
+    display: flex;
     align-items: center;
-    justify-items: center;
     color: $topbar-font-color;
     background: $topbar-color;
     box-shadow: 0px 3px 5px -1px rgba(117,117,117,1);
@@ -29,21 +27,32 @@
     }
 
     &__title {
-        grid-area: title;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
         font-family: 'abelregular';
         font-size: 1.5em;
+        padding-top: 13px;
+
+        @include breakpoint(tablet-screen) {
+            padding-top: 8px;
+        }
+        @include breakpoint(normal-screen) {
+            padding-top: 6px;
+        }
+        @include breakpoint(wide-screen) {
+            padding-top: 3px;
+        }
     }
     
     &__button {
-        grid-area: button;
-        justify-self: end;
-        text-align: right;
-        padding-right: 10px;
+        padding-left: 10px;
         @include breakpoint(tablet-screen) {
-            padding-right: 20px;
+            padding-left: 20px;
         }
         @include breakpoint(wide-screen) {
-            padding-right: 30px;
+            padding-left: 30px;
         }
         font-family: 'news_cyclebold';
         font-size: 0.9em;

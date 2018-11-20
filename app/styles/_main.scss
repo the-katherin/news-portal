@@ -1,5 +1,7 @@
+@import 'mixins';
+
 .main {
-    margin-top: $main-container-margin-top + 10px;
+    min-height: $main-height;
 }
 
 .main--show-channels {
@@ -26,7 +28,7 @@
     justify-content: center;
 }
 
-.channel, .news {
+.channel, .news-list__item {
     border: 1px solid grey;
     padding: 15px;
     margin-right: 10px;
@@ -67,7 +69,7 @@
 
 .news-list {
 
-    .news {
+    &__item {
         max-width: 250px;
 
         @include breakpoint (mobile-screen) {
@@ -80,7 +82,7 @@
             max-width: 500px;
         }
 
-        &__image{
+        .news__image{
              max-width: 250px;
 
              @include breakpoint (mobile-screen) {

@@ -78,7 +78,7 @@ export default class App {
             } = article;
 
             const newsItem = document.createElement('div');
-            newsItem.classList.add('news-list__item', 'news');
+            newsItem.classList.add('news-list__item', 'news'); // IE doesn't add second class
 
 
             newsItem.innerHTML =

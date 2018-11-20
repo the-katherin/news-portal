@@ -1,6 +1,7 @@
 @import 'mixins';
 
 html {
+    min-height: 100%;
     font-size: 14px;
     
     @include breakpoint(tablet-screen) {
@@ -13,14 +14,15 @@ html {
         font-size: 20x;
     }
     font-family: 'news_cycleregular';
+
+    body {
+        margin-top: $body-margin-top;
+        display: flex;
+        flex-flow: column nowrap;
+        min-height: 100%;
+        min-width: 320px;
+    }
 }
 
-body {
-    display: grid;
-    justify-content: stretch;
-    width: 97vw;
-    min-height: 100vh;
-    grid-template-rows: 95% 5%;
-    grid-auto-flow: row;
-}
+
 

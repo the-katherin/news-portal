@@ -1,5 +1,3 @@
-// import 'babel-polyfill';
-
 import './styles/main.scss';
 
 import App from './js/App';

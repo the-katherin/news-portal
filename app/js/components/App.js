@@ -23,21 +23,21 @@ export default class App {
         };
     }
 
-    onChannelChoose(e) {
+    async onChannelChoose(e) {
         const mainContainer = document.getElementById('main-container');
         const newsContainer = document.getElementById('news-list');
         const { target } = e;
         const channelId = target.id || target.parentElement.id;
 
         if (channelId && channelId !== 'channels-list') {
-            this.articlesComponent.render(channelId, newsContainer);
+            await this.articlesComponent.render(channelId, newsContainer);
             mainContainer.classList.add('main--hide-channels');
             scrollTo(0, 0);
         }
     }
 
-    init() {
-        this.channelsComponent.render(this.channelsContainer);
+    async init() {
+        await this.channelsComponent.render(this.channelsContainer);
         this.addEventListeners();
     }
 

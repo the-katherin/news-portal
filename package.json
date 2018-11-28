@@ -46,7 +46,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "es6-promise": "^4.2.5",
+    "loader-utils": "^1.1.0",
     "promise-polyfill": "8.1.0",
+    "schema-utils": "^1.0.0",
     "whatwg-fetch": "^3.0.0"
   },
   "browserslist": [

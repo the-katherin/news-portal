@@ -27,7 +27,7 @@ module.exports = {
                             [
                                 '@babel/preset-env',
                                 // {
-                                //     useBuiltIns: 'usage', has issues with ie11and dynamic-import
+                                //     useBuiltIns: 'usage', has issues with IE11 and dynamic-import
                                 // }
                             ]
                         ],
@@ -50,11 +50,28 @@ module.exports = {
                 test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/,
                 use: ['file-loader'],
             },
+
+            {
+                test: /\.json$/,
+                type: 'javascript/auto', // without it an error occurs
+                use: [
+                    { loader:  'raw-loader'},
+                    {
+                        loader:  'json-delete-numeric-attributes-loader',
+                        options: {
+                            'regularExpression': /^\d+$/
+                        }
+                    }
+                ]
+            },
         ],
     },
 
-    resolve: {
-        modules: ['node_modules'],
+    resolveLoader: {
+        modules: [
+            'node_modules',
+            path.resolve(__dirname, 'loaders')
+        ],
     },
 
     plugins: [

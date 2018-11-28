@@ -6,19 +6,21 @@ import {
     PAGE_SIZE,
 } from '../config';
 
-import loadData from '../utils/loadData';
-
 class ArticlesRepo {
-    constructor() {
-        this._articles = [];
+
+    async getList(newsChannel = '') {
+        const url = `${NEWS_API_URL}${NEWS_ENDPOINT}q=news&sources=${newsChannel}&language=${LANGUAGE}&pageSize=${PAGE_SIZE}&apiKey=${API_KEY}`;
+        const { articles } = await ArticlesRepo.loadData(url);
+        return articles;
     }
 
-    async getList(source = '') {
-        const url = `${NEWS_API_URL}${NEWS_ENDPOINT}q=news&sources=${source}&language=${LANGUAGE}&pageSize=${PAGE_SIZE}&apiKey=${API_KEY}`;
-        const { articles } = await loadData(url);
-        this._articles = articles;
-        return this._articles;
-    }
+    static loadData(url = '') {
+        const req = new Request(url);
+
+        return fetch(req)
+            .then(response => response.json())
+            .catch(error => console.log(error));
+    };
 
 }
 

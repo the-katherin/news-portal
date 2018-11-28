@@ -6,19 +6,21 @@ import {
     SOURCES_ENDPOINT,
 } from '../config';
 
-import loadData from '../utils/loadData';
-
 class ChannelsRepo {
-    constructor() {
-        this._channels = [];
-    }
 
     async getList() {
         const urlForSources = `${NEWS_API_URL}${SOURCES_ENDPOINT}language=${LANGUAGE}&country=${COUNTRY}&apiKey=${API_KEY}`;
-        const { sources } = await loadData(urlForSources);
-        this._channels = sources;
-        return this._channels;
+        const { sources } = await ChannelsRepo.loadData(urlForSources);
+        return sources;
     }
+
+    static loadData(url = '') {
+        const req = new Request(url);
+
+        return fetch(req)
+            .then(response => response.json())
+            .catch(error => console.log(error));
+    };
 
 }
 

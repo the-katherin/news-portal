@@ -2,9 +2,17 @@ import ChannelsRepo from '../services/ChannelsRepo';
 
 export default class ChannelsList {
 
-    async render(channelsContainer) {
-        const channels = await ChannelsRepo.getList();
-        const channelsElements = [];
+    constructor() {
+        this._channels = [];
+    }
+
+    async getListData() {
+        this._channels = await ChannelsRepo.getList();
+    }
+
+    static getListMarkup(channels) {
+        let channelsElements = '';
+
         channels.map(channel => {
             const {
                 category = '',
@@ -14,21 +22,25 @@ export default class ChannelsList {
                 url = '',
             } = channel;
 
-            const channelItem = document.createElement('div');
-            channelItem.classList.add('channel');
-            channelItem.setAttribute('id', `${id}`);
-
-            channelItem.innerHTML =
+            channelsElements +=
                 `
-                <h3 class="channel__name">${name}</h3>
-                <span class='channel__category'>${category}</span>
-                <p class="channel__description">${description}</p>
-                 <a href=${url} target='_blank' class="channel__link">Link</a>
+                <div class="channel" id=${id}>
+                    <h3 class="channel__name">${name}</h3>
+                    <span class='channel__category'>${category}</span>
+                    <p class="channel__description">${description}</p>
+                    <a href=${url} target='_blank' class="channel__link">Link</a>
+                </div>
             `
-            channelsElements.push(channelItem);
         });
 
-        channelsElements.forEach(channel => channelsContainer.appendChild(channel));
+        return channelsElements;
+    }
+
+
+    async render(channelsContainer) {
+        await this.getListData();
+        const channelsMarkup = ChannelsList.getListMarkup(this._channels);
+        channelsContainer.innerHTML = channelsMarkup;
     }
 
 }

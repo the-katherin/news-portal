@@ -9,19 +9,24 @@
 </head>
 
 <body>
-    <header class="topbar">
-        <div class="topbar__title">News Portal</div>
-        <div class="topbar__button" id="choose-channel-button">Choose channel</div>
-    </header>
-    <main id="main-container" class='main main--show-channels'>
-        <div id="channels-list" class="channels-list"></div>
-        <div id="news-list" class="news-list"></div>
-    </main>
-    <footer>©2018 News Portal. Powered by -
-        <a href="https://newsapi.org" target="_blank">
-            - News API.
-        </a>
-    </footer>
+    <button class="show-news-portal-button" id="show-news-portal-button">
+        Click to show News Portal
+    </button>
+    <div class="main-content-wrapper main-content-wrapper--hidden" id="main-content-wrapper">
+        <header class="topbar">
+            <div class="topbar__title">News Portal</div>
+            <div class="topbar__button" id="choose-channel-button">Choose channel</div>
+        </header>
+        <main id="main-container" class='main main--show-channels'>
+            <div id="channels-list" class="channels-list"></div>
+            <div id="news-list" class="news-list"></div>
+        </main>
+        <footer>©2018 News Portal. Powered by -
+            <a href="https://newsapi.org" target="_blank">
+                - News API.
+            </a>
+        </footer>
+    </div>
 </body>
 
 </html>

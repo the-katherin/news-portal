@@ -1,17 +1,17 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
     context: path.resolve(__dirname, "app"),
     entry: {
-        app: './main.js'
+        index: './index.js',
     },
 
     output: {
         filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
 
@@ -26,13 +26,24 @@ module.exports = {
                         presets: [
                             [
                                 '@babel/preset-env',
-                                {
-                                    useBuiltIns: 'usage',
-                                }
+                                // {
+                                //     useBuiltIns: 'usage', has issues with ie11and dynamic-import
+                                // }
                             ]
-                        ]
+                        ],
+                        plugins: ['@babel/plugin-syntax-dynamic-import']
                     }
                 }
+            },
+
+            {
+                test: /\.scss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
+                ],
             },
 
             {
@@ -47,7 +58,6 @@ module.exports = {
     },
 
     plugins: [
-        new CleanWebpackPlugin(['dist']),
 
         new webpack.ProvidePlugin({
             fetch: 'exports-loader?self.fetch!whatwg-fetch/dist/fetch.umd',
@@ -59,7 +69,8 @@ module.exports = {
         }),
 
         new MiniCssExtractPlugin({
-            filename: 'main.bundle.css',
+            filename: '[name].bundle.css',
+            chunkFilename: "[id].css",
         }),
 
     ],

@@ -14,13 +14,5 @@ module.exports = merge(common, {
         hot: true,
         overlay: true,
         watchContentBase: true,
-    },
-    module: {
-        rules: [
-            {
-                test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
-            },
-        ]
-    },
+    }
 });

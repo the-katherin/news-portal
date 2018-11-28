@@ -3,6 +3,7 @@
 html {
     min-height: 100%;
     font-size: 14px;
+    width: 100%;
     
     @include breakpoint(tablet-screen) {
         font-size: 16px;
@@ -13,14 +14,28 @@ html {
     @include breakpoint(wide-screen) {
         font-size: 20x;
     }
+
     font-family: 'news_cycleregular';
 
     body {
+        width: 100%;
+        min-height: 100vh;
+        flex-flow: column;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .main-content-wrapper {
         margin-top: $body-margin-top;
         display: flex;
         flex-flow: column nowrap;
         min-height: 100%;
-        min-width: 320px;
+        min-width: 100%;
+      
+        &--hidden {
+            display: none;
+        }
     }
 }
 

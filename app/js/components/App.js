@@ -1,43 +1,25 @@
-import ChannelsList from './ChannelsList';
-import ArticlesList from './ArticlesList';
-
 export default class App {
     constructor() {
-        this.channelsContainer = document.getElementById('channels-list');
-        this.chooseChannelButton = document.getElementById('choose-channel-button');
-        this.channelsComponent = new ChannelsList();
-        this.articlesComponent = new ArticlesList();
+        this.showNewsPortalButton = document.getElementById('show-news-portal-button');
+        this.mainContentWrapper = document.getElementById('main-content-wrapper');
     }
 
     addEventListeners() {
-        this.chooseChannelButton.addEventListener('click', this.onChooseChannelButtonClick);
-        this.channelsContainer.addEventListener('click', this.onChannelChoose.bind(this));
+        this.showNewsPortalButton.addEventListener('click', this.onShowNewsPortalButtonClick.bind(this));
     }
 
-    onChooseChannelButtonClick(e) {
-        scrollTo(0, 0);
-        const mainContainer = document.getElementById('main-container');
+    async onShowNewsPortalButtonClick(e) {
+        await import(/* webpackChunkName: "main" */ '../main').then(module => {
+            const initNewsPortal = module.default;
 
-        if (mainContainer.classList.contains('main--hide-channels')) {
-            mainContainer.classList.remove('main--hide-channels');
-        };
-    }
+            initNewsPortal();
+        });
 
-    async onChannelChoose(e) {
-        const mainContainer = document.getElementById('main-container');
-        const newsContainer = document.getElementById('news-list');
-        const { target } = e;
-        const channelId = target.id || target.parentElement.id;
+        this.showNewsPortalButton.classList.add('show-news-portal-button--hidden');
+        this.mainContentWrapper.classList.remove('main-content-wrapper--hidden');
+    };
 
-        if (channelId && channelId !== 'channels-list') {
-            await this.articlesComponent.render(channelId, newsContainer);
-            mainContainer.classList.add('main--hide-channels');
-            scrollTo(0, 0);
-        }
-    }
-
-    async init() {
-        await this.channelsComponent.render(this.channelsContainer);
+    init() {
         this.addEventListeners();
     }
 

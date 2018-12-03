@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-    context: path.resolve(__dirname, "app"),
+    context: path.resolve(__dirname, "../app"),
     entry: {
         index: './index.js',
     },
@@ -12,7 +12,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, '../dist')
     },
 
     module: {
@@ -39,10 +39,17 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'postcss-loader',
-                    'sass-loader',
+                    { loader: MiniCssExtractPlugin.loader },
+                    { loader: 'css-loader' },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            config: {
+                                path: path.resolve(__dirname, '../configs')
+                            }
+                        }
+                    },
+                    { loader: 'sass-loader' },
                 ],
             },
 
@@ -55,9 +62,9 @@ module.exports = {
                 test: /\.json$/,
                 type: 'javascript/auto', // without it an error occurs
                 use: [
-                    { loader:  'raw-loader'},
+                    { loader: 'raw-loader' },
                     {
-                        loader:  'json-delete-numeric-attributes-loader',
+                        loader: 'json-delete-numeric-attributes-loader',
                         options: {
                             'regularExpression': /^\d+$/
                         }
@@ -70,7 +77,7 @@ module.exports = {
     resolveLoader: {
         modules: [
             'node_modules',
-            path.resolve(__dirname, 'loaders')
+            path.resolve(__dirname, '../loaders')
         ],
     },
 

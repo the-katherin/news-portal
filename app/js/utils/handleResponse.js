@@ -1,8 +1,10 @@
-const handleErrors = response => {
+const handleResponse = response => {
     if (response.ok ) {
         return response.json();
     }
-    const errorText = response.statusText;
+    
+    const errorText = response.statusText ||
+        `Response status: ${response.status}. Status type: ${response.type}`;
 
     import(/* webpackChunkName: "errorPopupInstance" */ '../errorPopupInstance').then(module => {
         const createErrorPopup = module.default;
@@ -12,4 +14,4 @@ const handleErrors = response => {
     });
 
 };
- export default handleErrors;
+ export default handleResponse;

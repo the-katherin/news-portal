@@ -6,9 +6,14 @@ const NEWS_ENDPOINT = 'everything?';
 const PAGE_SIZE = 10;
 const SOURCES_ENDPOINT = 'sources?';
 
+const DEFAULT_HEADERS = {
+    'Content-Type': 'application/json',
+};
+
 export {
     API_KEY,
     COUNTRY,
+    DEFAULT_HEADERS,
     LANGUAGE,
     NEWS_API_URL,
     NEWS_ENDPOINT,

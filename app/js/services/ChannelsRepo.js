@@ -6,7 +6,7 @@ import {
     SOURCES_ENDPOINT,
 } from '../config';
 
-import handleErrors from "../utils/handleErrors";
+import RequestHandler from "../utils/requestsFactory";
 
 class ChannelsRepo {
 
@@ -18,11 +18,8 @@ class ChannelsRepo {
     }
 
     static loadData(url = '') {
-        const req = new Request(url);
-
-        return fetch(req)
-            .then(handleErrors)
-            .catch(error => console.log(error));
+        const request = new RequestHandler('get');
+        return request.send(url);
     };
 
 }

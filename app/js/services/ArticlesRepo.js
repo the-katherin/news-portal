@@ -6,11 +6,11 @@ import {
     PAGE_SIZE,
 } from '../config';
 
-import handleErrors from '../utils/handleErrors';
+import RequestHandler from '../utils/requestsFactory';
 
 class ArticlesRepo {
 
-    async getList(newsChannel = '') {
+     async getList(newsChannel = '') {
         const url = `${NEWS_API_URL}${NEWS_ENDPOINT}q=news&sources=${newsChannel}&language=${LANGUAGE}&pageSize=${PAGE_SIZE}&apiKey=${API_KEY}`;
         const result = await ArticlesRepo.loadData(url);
         const articlesList = result ? result.articles : [];
@@ -18,11 +18,8 @@ class ArticlesRepo {
     }
 
     static loadData(url = '') {
-        const req = new Request(url);
-
-        return fetch(req)
-            .then(handleErrors)
-            .catch(error => console.log(error));
+        const request = new RequestHandler('get');
+        return request.send(url);
     };
 
 }

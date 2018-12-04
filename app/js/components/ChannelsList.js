@@ -10,7 +10,7 @@ export default class ChannelsList {
         this._channels = await ChannelsRepo.getList();
     }
 
-    static getListMarkup(channels) {
+    static getListMarkup(channels = []) {
         let channelsElements = '';
 
         channels.map(channel => {

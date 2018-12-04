@@ -37,23 +37,6 @@ module.exports = {
             },
 
             {
-                test: /\.scss$/,
-                use: [
-                    { loader: MiniCssExtractPlugin.loader },
-                    { loader: 'css-loader' },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            config: {
-                                path: path.resolve(__dirname, '../configs')
-                            }
-                        }
-                    },
-                    { loader: 'sass-loader' },
-                ],
-            },
-
-            {
                 test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/,
                 use: ['url-loader'],
             },

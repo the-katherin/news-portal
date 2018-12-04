@@ -9,7 +9,7 @@ export default class ArticlesList {
         this._articles = await ArticlesRepo.getList(newsChannel);
     }
 
-    static getListMarkup(articles) {
+    static getListMarkup(articles = []) {
         let articlesElements = '';
 
         articles.map(article => {

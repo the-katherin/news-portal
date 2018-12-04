@@ -1,9 +1,5 @@
 @import 'mixins';
 
-.main {
-    min-height: $main-height;
-}
-
 .main--show-channels {
     .channels-list {
         display: flex;

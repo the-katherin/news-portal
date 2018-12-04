@@ -36,6 +36,22 @@ html {
             display: none;
         }
     }
+
+    .main{
+        min-height: $main-height;
+
+        &--hidden {
+            display: none;
+        }
+    }
+
+    .error-popup-container {
+        min-height: $main-height;
+
+        &--hidden {
+            display: none;
+        }
+    }
 }
 
 

@@ -1,8 +1,11 @@
 import ArticlesRepo from '../services/ArticlesRepo';
 
 export default class ArticlesList {
-    constructor() {
+    constructor(store) {
         this._articles = [];
+        this.render = this.render.bind(this);
+        this.store = store;
+        this.store.subscribe(this.render);
     }
 
     async getListData(newsChannel) {
@@ -45,10 +48,19 @@ export default class ArticlesList {
         return articlesElements;
     }
 
-    async render(newsChannel = '', newsContainer) {
-        await this.getListData(newsChannel);
-        const newsMarkup = ArticlesList.getListMarkup(this._articles);
-        newsContainer.innerHTML = newsMarkup;
+    async render() {
+        const {mainViewMode} = this.store.getState();
+        const {viewMode} = this.store.getState();
+        const {error} = this.store.getState();
+
+        if ( mainViewMode === 'articles' && viewMode === 'main' && !error) {
+            const newsContainer = document.getElementById('news-list');
+            newsContainer.innerHTML = '';
+            const {newsChannel} = this.store.getState();
+            await this.getListData(newsChannel);
+            const newsMarkup = ArticlesList.getListMarkup(this._articles);
+            newsContainer.innerHTML = newsMarkup;
+        }
     }
 
 }

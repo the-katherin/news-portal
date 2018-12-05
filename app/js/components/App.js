@@ -1,12 +1,34 @@
+import {switchToMainViewMode} from '../redux/actions';
+
 export default class App {
-    constructor() {
-        this.showNewsPortalButton = document.getElementById('show-news-portal-button');
-        this.showNewsButtonContainer = document.getElementById('show-news-button-container');
-        this.mainContentWrapper = document.getElementById('main-content-wrapper');
+    constructor(store) {
+        this.changeView = this.changeView.bind(this);
+        this.store = store;
+        this.store.subscribe(this.changeView);
     }
 
     addEventListeners() {
-        this.showNewsPortalButton.addEventListener('click', this.onShowNewsPortalButtonClick.bind(this));
+        const showNewsPortalButton = document.getElementById('show-news-portal-button');
+        showNewsPortalButton.addEventListener('click', this.onShowNewsPortalButtonClick.bind(this));
+    }
+
+    changeView() {
+        const {viewMode} = this.store.getState();
+        const errorPopupContainer = document.getElementById('error-popup-container');
+        const mainContent = document.getElementById('main-container');
+        const mainContentWrapper = document.getElementById('main-content-wrapper');
+        const showNewsButtonContainer = document.getElementById('show-news-button-container');
+
+        if (viewMode === 'main' && !showNewsButtonContainer.classList.contains('show-news-button-container--hidden')) {
+            showNewsButtonContainer.classList.add('show-news-button-container--hidden');
+            mainContentWrapper.classList.remove('main-content-wrapper--hidden');
+        } else if (viewMode === 'main' && !errorPopupContainer.classList.contains('error-popup-container--hidden')) {
+            errorPopupContainer.classList.add('error-popup-container--hidden');
+            mainContent.classList.remove('main--hidden');
+        } else if (viewMode === 'error') {
+            mainContent.classList.add('main--hidden');
+            errorPopupContainer.classList.remove('error-popup-container--hidden');
+        }
     }
 
     async onShowNewsPortalButtonClick(e) {
@@ -16,8 +38,7 @@ export default class App {
             initNewsPortal();
         });
 
-        this.showNewsButtonContainer.classList.add('show-news-button-container--hidden');
-        this.mainContentWrapper.classList.remove('main-content-wrapper--hidden');
+        this.store.dispatch(switchToMainViewMode);
     };
 
     init() {

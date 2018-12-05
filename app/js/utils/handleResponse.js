@@ -6,12 +6,7 @@ const handleResponse = response => {
     const errorText = response.statusText ||
         `Response status: ${response.status}. Status type: ${response.type}`;
 
-    import(/* webpackChunkName: "errorPopupInstance" */ '../errorPopupInstance').then(module => {
-        const createErrorPopup = module.default;
-        const errorPopup = createErrorPopup();
-        errorPopup.init();
-        errorPopup.render(errorText);
-    });
+    throw new Error(errorText);
 
 };
  export default handleResponse;

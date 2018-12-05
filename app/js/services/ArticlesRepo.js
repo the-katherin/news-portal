@@ -18,8 +18,8 @@ class ArticlesRepo {
     }
 
     static loadData(url = '') {
-        const request = new RequestsProxy('get');
-        return request.send(url);
+        const request = new RequestsProxy(url, 'get');
+        return request.send();
     };
 
 }

@@ -1,7 +1,13 @@
+import {switchToMainViewMode} from "../redux/actions";
+
 export default class ErrorPopup {
-    constructor() {
+    constructor(store) {
         if(! ErrorPopup.instance){
             ErrorPopup.instance = this;
+            this.render = this.render.bind(this);
+            this.store = store;
+            this.store.subscribe(this.render);
+            this.init();
         }
         return ErrorPopup.instance;
     }
@@ -12,26 +18,17 @@ export default class ErrorPopup {
     }
 
     onErrorPopupButtonClick(e) {
-        const errorPopupContainer = document.getElementById('error-popup-container');
-        const mainContent = document.getElementById('main-container');
-
-        errorPopupContainer.classList.add('error-popup-container--hidden');
-        mainContent.classList.remove('main--hidden');
+        this.store.dispatch(switchToMainViewMode);
     };
 
-    showErrorPopup() {
-        const errorPopupContainer = document.getElementById('error-popup-container');
-        const mainContent = document.getElementById('main-container');
+    render() {
+        const {viewMode} = this.store.getState();
 
-        mainContent.classList.add('main--hidden');
-        errorPopupContainer.classList.remove('error-popup-container--hidden');
-    }
-
-    render(error) {
-        const errorPopupTextElement = document.getElementById('error-popup-text');
-        errorPopupTextElement.innerText = error;
-
-        this.showErrorPopup();
+        if(viewMode === 'error'){
+            const {error} = this.store.getState();
+            const errorPopupTextElement = document.getElementById('error-popup-text');
+            errorPopupTextElement.innerText = error;
+        }
     }
 
     init() {

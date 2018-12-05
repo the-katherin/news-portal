@@ -1,5 +1,6 @@
 import handleResponse from "./handleResponse";
 import { DEFAULT_HEADERS } from "../config";
+import handleResponseFailed from "./handleResponseFailed";
 
 const requestTypes =  {
     get: 'GET',
@@ -9,27 +10,43 @@ const requestTypes =  {
 };
 
 export default class RequestHandler {
-    constructor (method, bodyData = '', headers = {}, ...rest) {
-        this.parameters = RequestHandler.defineRequestParameters(method, bodyData, headers, ...rest);
+    constructor (url, method, ...rest) {
+        this.parameters = RequestHandler.defineRequestParameters(method, rest);
+        this.url = url;
     }
 
-    static defineRequestParameters (requestMethod, bodyData, headers, ...rest) {
-        const parametersObject = {
-            method: requestTypes[requestMethod],
-            ...rest,
-        };
+    static defineRequestParameters (requestMethod, params) {
+
+        const parametersObject = RequestHandler.setParams(requestMethod, params);
 
         if (requestMethod === 'post' || requestMethod === 'put') {
-            parametersObject.body = JSON.stringify(bodyData);
-            parametersObject.headers = headers || DEFAULT_HEADERS;
+            RequestHandler.setHeaders(parametersObject);
         }
 
         return parametersObject;
     }
 
-    send (url) {
-        return fetch(url, this.parameters)
+    static setParams (requestMethod, params){
+        const obj = { method: requestTypes[requestMethod]};
+
+        if (params) {
+            for (let param of params) {
+                let key = Object.keys(param)[0];
+                let value = Object.values(param)[0];
+                obj[key] = value;
+            }
+        }
+
+        return obj;
+    }
+
+    static setHeaders(parametersObject) {
+        parametersObject.headers = parametersObject.headers || DEFAULT_HEADERS;
+    }
+
+    send () {
+        return fetch(this.url, this.parameters)
             .then(handleResponse)
-            .catch(error => console.log(error));
+            .catch(error => handleResponseFailed(error));
     }
 }

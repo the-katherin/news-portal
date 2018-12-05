@@ -6,7 +6,7 @@ import {
     PAGE_SIZE,
 } from '../config';
 
-import RequestHandler from '../utils/requestsFactory';
+import RequestsProxy from "../utils/requestsProxy";
 
 class ArticlesRepo {
 
@@ -18,7 +18,7 @@ class ArticlesRepo {
     }
 
     static loadData(url = '') {
-        const request = new RequestHandler('get');
+        const request = new RequestsProxy('get');
         return request.send(url);
     };
 

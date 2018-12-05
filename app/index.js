@@ -1,7 +1,6 @@
 import './styles/index.scss';
 
 import txt from './assets/jsonExample.json'; // for custom loader example
-console.log(txt);
 
 import "@babel/polyfill";
 

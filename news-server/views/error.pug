@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  div(class='error')
+    h1(class='error__header')= message
+    h2(class='error__status')= error.status
+  //- pre #{error.stack}

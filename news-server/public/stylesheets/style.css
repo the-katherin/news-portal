@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: cadetblue;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.error-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.error {
+  border: 5px solid red;
+  padding: 15px;
+  font-size: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-items: center;
+  align-items: center;
+}

@@ -7,8 +7,10 @@
 body {
   background: cadetblue;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   min-width: 100vw;
@@ -28,6 +30,7 @@ a {
 
 .error {
   border: 5px solid red;
+  background: rgba(255,255,255,0.5);
   padding: 15px;
   font-size: 20px;
   display: flex;

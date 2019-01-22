@@ -5,8 +5,22 @@ const newsJSON = require('../data/news.json');
 let newsArray = newsJSON;
 
 /* GET news listing. */
+
 router.get('/', function (req, res) {
-  res.json(newsArray); // todo render layout
+  res.json(newsArray);
+});
+
+/* GET news by id. */
+
+router.get('/:id', function (req, res, next) {
+  const { id } = req.params;
+  const news = newsArray.find(newsItem => newsItem.id === id);
+
+  if (news) {
+    res.send(news);
+  } else {
+    next();
+  }
 });
 
 /* POST new news item */

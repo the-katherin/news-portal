@@ -9,6 +9,21 @@ const notFoundErrorHandler = require('./errors/notFound');
 const indexRouter = require('./routes/index');
 const newsRouter = require('./routes/news');
 
+const mongoose = require('mongoose');
+const mongodb = 'mongodb://127.0.0.1/lesson8';
+
+mongoose.connect(mongodb, { useNewUrlParser: true, 'useFindAndModify': false });
+const db = mongoose.connection;
+
+db.once('open', function () {
+  console.log('Connected to MongoDB');
+});
+
+// Check for db errors
+db.on('error', function (err) {
+  console.log(err);
+});
+
 const app = express();
 
 // view engine setup

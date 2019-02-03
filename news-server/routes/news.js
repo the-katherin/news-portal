@@ -1,31 +1,39 @@
 const express = require('express');
 const router = express.Router();
 
-const newsJSON = require('../data/news.json');
-let newsArray = newsJSON;
+const News = require('../db/News.model');
 
 /* GET news listing. */
 
-router.get('/', function (req, res) {
-  res.json(newsArray);
+router.get('/', function (req, res, next) {
+  News.find({}, function (err, news) {
+    if (err) {
+      next(err);
+    } else {
+      res.json(news);
+    }
+  });
 });
 
 /* GET news by id. */
 
 router.get('/:id', function (req, res, next) {
   const { id } = req.params;
-  const news = newsArray.find(newsItem => newsItem.id === id);
 
-  if (news) {
-    res.send(news);
-  } else {
-    next();
-  }
+  News.find({ id: id }, function (err, newsItem) {
+    if (err) {
+      next(err);
+    } else if (newsItem.length) {
+      res.send(newsItem);
+    } else {
+      next();
+    }
+  });
 });
 
 /* POST new news item */
 
-router.post('/', function (req, res) {
+router.post('/', function (req, res, next) {
   const { payload, title } = req.body;
   const news = {
     id: Date.now(),
@@ -33,35 +41,46 @@ router.post('/', function (req, res) {
     payload,
   };
 
-  newsArray.push(news);
-  res.send(newsArray);
+  News.create({ ...news }, function (err, newsItem) {
+    if (err) {
+      next(err);
+    } else {
+      res.send(`News is successfully saved: ${newsItem}`);
+    }
+  })
 });
 
-/* PUT payload data to specified with ID news item */
+/* PUT payload data to specified news item */
 
-router.put('/:id', function (req, res) {
+router.put('/:id', function (req, res, next) {
   const { id } = req.params;
   const { payload } = req.body;
-  const news = newsArray.find(newsItem => newsItem.id === id);
 
-  if (news) {
-    news.payload = payload;
-  };
-
-  res.send(newsArray);
+  News.findOneAndUpdate({ id: id }, { payload: payload }, function (err, newsItem) {
+    if (err) {
+      next(err);
+    } else if (newsItem) {
+      res.send(`Successfully updated`);
+    } else {
+      next();
+    }
+  });
 });
 
-/* DELETE specified with ID news item */
+/* DELETE specified news item */
 
-router.delete('/:id', function (req, res) {
+router.delete('/:id', function (req, res, next) {
   const { id } = req.params;
-  const newsIndex = newsArray.findIndex(newsItem => newsItem.id === id);
 
-  if (newsIndex > -1) {
-    newsArray.splice(newsIndex, 1);
-  };
-
-  res.send(newsArray);
+  News.findOneAndDelete({ id: id }, function (err, newsItem) {
+    if (err) {
+      next(err);
+    } else if (newsItem) {
+      res.send(`Successfully deleted`);
+    } else {
+      next();
+    }
+  });
 });
 
 module.exports = router;

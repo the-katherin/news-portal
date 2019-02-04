@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div(class='register-container')
+    div(class='register-form')
+      h1 Register
+      form(method="POST", action='/users/register')      
+        label Name:
+        input.form-control(name='name', type='text' required)
+        label Password:
+        input.form-control(name='password', type='password' required)
+        input(class='submit-button', type='submit', value='Submit')
+        

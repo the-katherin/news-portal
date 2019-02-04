@@ -4,15 +4,20 @@ const fs = require('fs');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const session = require('express-session');
+const passport = require('passport');
+
 const notFoundErrorHandler = require('./errors/notFound');
+const config = require('./config/usersDB');
 
 const indexRouter = require('./routes/index');
 const newsRouter = require('./routes/news');
+const usersRouter = require('./routes/users');
 
 const mongoose = require('mongoose');
-const mongodb = 'mongodb://127.0.0.1/lesson8';
+const { database } = config;
 
-mongoose.connect(mongodb, { useNewUrlParser: true, 'useFindAndModify': false });
+mongoose.connect(database, { useNewUrlParser: true, 'useFindAndModify': false });
 const db = mongoose.connection;
 
 db.once('open', function () {
@@ -26,6 +31,12 @@ db.on('error', function (err) {
 
 const app = express();
 
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true, // default - false
+  saveUninitialized: true,
+}))
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -37,9 +48,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('connect-flash')());
+app.use(function (req, res, next) {
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
+
+// Passport Config
+require('./config/passport')(passport);
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/news', newsRouter);
+app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

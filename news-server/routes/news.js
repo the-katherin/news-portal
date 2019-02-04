@@ -53,34 +53,44 @@ router.post('/', function (req, res, next) {
 /* PUT payload data to specified news item */
 
 router.put('/:id', function (req, res, next) {
+  const isLoggedIn = req.user;
   const { id } = req.params;
   const { payload } = req.body;
 
-  News.findOneAndUpdate({ id: id }, { payload: payload }, function (err, newsItem) {
-    if (err) {
-      next(err);
-    } else if (newsItem) {
-      res.send(`Successfully updated`);
-    } else {
-      next();
-    }
-  });
+  if (isLoggedIn) {
+    News.findOneAndUpdate({ id: id }, { payload: payload }, function (err, newsItem) {
+      if (err) {
+        next(err);
+      } else if (newsItem) {
+        res.send(`Successfully updated`);
+      } else {
+        next();
+      }
+    });
+  } else {
+    res.redirect('/users/login');
+  }
 });
 
 /* DELETE specified news item */
 
 router.delete('/:id', function (req, res, next) {
+  const isLoggedIn = req.user;
   const { id } = req.params;
 
-  News.findOneAndDelete({ id: id }, function (err, newsItem) {
-    if (err) {
-      next(err);
-    } else if (newsItem) {
-      res.send(`Successfully deleted`);
-    } else {
-      next();
-    }
-  });
+  if (isLoggedIn) {
+    News.findOneAndDelete({ id: id }, function (err, newsItem) {
+      if (err) {
+        next(err);
+      } else if (newsItem) {
+        res.send(`Successfully deleted`);
+      } else {
+        next();
+      }
+    });
+  } else {
+    res.redirect('/users/login');
+  }
 });
 
 module.exports = router;

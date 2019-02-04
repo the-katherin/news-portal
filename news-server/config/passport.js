@@ -1,5 +1,9 @@
 const LocalStrategy = require('passport-local').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 const User = require('../db/User.model');
+const config = require('../config/config');
+const { id: facebookId, secretKey } = config.facebook;
+require('https').globalAgent.options.rejectUnauthorized = false;
 
 module.exports = function (passport) {
     passport.use(new LocalStrategy(
@@ -19,6 +23,34 @@ module.exports = function (passport) {
         }
     ));
 
+    passport.use(new FacebookStrategy({
+        clientID: facebookId,
+        clientSecret: secretKey,
+        callbackURL: "http://localhost:3000/users/auth/facebook/callback"
+    },
+        function (accessToken, refreshToken, profile, done) {
+            const { displayName: userName, id } = profile;
+
+            User.findOne({ name: userName }, function (err, user) {
+                if (err) {
+                    return done(err);
+                }
+                if (!user) {
+                    User.create({ name: userName, password: id, id: id }, function (err, user) {
+                        if (err) {
+                            throw err;
+                        } else {
+                            return done(null, user);
+                        }
+                    })
+                } else {
+                    return done(null, user);
+                }
+            });
+        }
+    ));
+
+
     passport.serializeUser(function (user, done) {
         done(null, user.id);
     });
@@ -29,21 +61,3 @@ module.exports = function (passport) {
         });
     });
 };
-
-
-
-// const { Strategy } = require('passport-github');
-// const User = require('../models/user');
-// const config = require('../config');
-
-// const githubStrategy = new Strategy(config.githubAuth,
-//     function (accessToken, refreshToken, profile, done) {
-//         return User
-//             .findOne({ 'githubId': profile.id })
-//             .then(user => user ? user : new User({ githubId: profile.id, username: profile.username }).save())
-//             .then(data => done(null, data.toJSON()))
-//             .catch(err => done(err));
-//     }
-// );
-
-// module.exports = githubStrategy;

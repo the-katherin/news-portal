@@ -8,7 +8,7 @@ const session = require('express-session');
 const passport = require('passport');
 
 const notFoundErrorHandler = require('./errors/notFound');
-const config = require('./config/usersDB');
+const config = require('./config/config');
 
 const indexRouter = require('./routes/index');
 const newsRouter = require('./routes/news');

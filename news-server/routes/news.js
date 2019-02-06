@@ -1,96 +1,34 @@
 const express = require('express');
 const router = express.Router();
 
-const News = require('../db/News.model');
+const {
+  GetNews,
+  GetNewsById,
+  CreateNews,
+  UpdateNews,
+  DeleteNews,
+} = require('../controllers/news.controller');
+
+const authHandler = require('../middlewares/authHandler');
 
 /* GET news listing. */
 
-router.get('/', function (req, res, next) {
-  News.find({}, function (err, news) {
-    if (err) {
-      next(err);
-    } else {
-      res.json(news);
-    }
-  });
-});
+router.get('/', GetNews);
 
 /* GET news by id. */
 
-router.get('/:id', function (req, res, next) {
-  const { id } = req.params;
-
-  News.find({ id: id }, function (err, newsItem) {
-    if (err) {
-      next(err);
-    } else if (newsItem.length) {
-      res.send(newsItem);
-    } else {
-      next();
-    }
-  });
-});
+router.get('/:id', GetNewsById);
 
 /* POST new news item */
 
-router.post('/', function (req, res, next) {
-  const { payload, title } = req.body;
-  const news = {
-    id: Date.now(),
-    title,
-    payload,
-  };
-
-  News.create({ ...news }, function (err, newsItem) {
-    if (err) {
-      next(err);
-    } else {
-      res.send(`News is successfully saved: ${newsItem}`);
-    }
-  })
-});
+router.post('/', CreateNews);
 
 /* PUT payload data to specified news item */
 
-router.put('/:id', function (req, res, next) {
-  const isLoggedIn = req.user;
-  const { id } = req.params;
-  const { payload } = req.body;
-
-  if (isLoggedIn) {
-    News.findOneAndUpdate({ id: id }, { payload: payload }, function (err, newsItem) {
-      if (err) {
-        next(err);
-      } else if (newsItem) {
-        res.send(`Successfully updated`);
-      } else {
-        next();
-      }
-    });
-  } else {
-    res.redirect('/users/login');
-  }
-});
+router.put('/:id', authHandler, UpdateNews);
 
 /* DELETE specified news item */
 
-router.delete('/:id', function (req, res, next) {
-  const isLoggedIn = req.user;
-  const { id } = req.params;
-
-  if (isLoggedIn) {
-    News.findOneAndDelete({ id: id }, function (err, newsItem) {
-      if (err) {
-        next(err);
-      } else if (newsItem) {
-        res.send(`Successfully deleted`);
-      } else {
-        next();
-      }
-    });
-  } else {
-    res.redirect('/users/login');
-  }
-});
+router.delete('/:id', authHandler, DeleteNews);
 
 module.exports = router;

@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
         private newsService: NewsService,
     ) {
         this.isLoadButtonVisible = false;
-        this.defaultVisibleItemsLength = 1;
+        this.defaultVisibleItemsLength = 2;
         this.maxVisibleItems = this.defaultVisibleItemsLength;
         this.renderEditButtons = this.newsService.showOnlyMyArticles;
     }

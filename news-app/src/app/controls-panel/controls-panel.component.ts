@@ -9,19 +9,32 @@ import { NewsService } from '../services/news.service';
 })
 export class ControlsPanelComponent implements OnInit {
 
+    public isSelectDisabled: boolean;
+
     constructor(
         private titleService: TitleService,
         private newsService: NewsService,
     ) { }
 
     ngOnInit() {
+        this.isSelectDisabled = false;
         this.titleService.onChangeTitle('BBC');
-        this.newsService.onChangeChannel('BBC');
     }
 
     onChannelChange(value) {
         this.titleService.onChangeTitle(value);
         this.newsService.onChangeChannel(value);
+    }
+
+    onShowOnlyMyArticlesChange(value) {
+        this.newsService.onShowOnlyMyArticlesChange(value);
+        this.isSelectDisabled = value;
+
+        if (value) {
+            this.titleService.onChangeTitle('News-App');
+        } else {
+            this.titleService.onChangeTitle(this.newsService.channel);
+        }
     }
 
 }

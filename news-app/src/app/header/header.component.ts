@@ -19,10 +19,7 @@ export class HeaderComponent implements OnInit {
         private titleService: TitleService,
     ) { }
 
-    // constructor() { }
-
     ngOnInit() {
-        // this.showControls = this.showControlsService.showControls;
         this.showControlsService.switchControls.subscribe((isVisible: boolean) => {
             this.showControls = isVisible;
         });
@@ -33,12 +30,4 @@ export class HeaderComponent implements OnInit {
             this.title = title;
         });
     }
-
-    // handleChannelChange(event: string) {
-    //     // console.log(event);
-    //     this.pageTitle = event;
-    // }
-
-
-
 }

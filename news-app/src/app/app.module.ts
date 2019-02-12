@@ -13,6 +13,8 @@ import { ArticleFormComponent } from './article-form/article-form.component';
 import { ReactiveFormsModule } from '../../node_modules/@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ArticleComponent } from './article/article.component';
+import { SingleArticleViewComponent } from './single-article-view/single-article-view.component';
+import { EditArticleComponent } from './edit-article/edit-article.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ArticleComponent } from './article/article.component';
         ControlsPanelComponent,
         AddArticleComponent,
         ArticleFormComponent,
-        ArticleComponent
+        ArticleComponent,
+        SingleArticleViewComponent,
+        EditArticleComponent
     ],
     imports: [
         BrowserModule,

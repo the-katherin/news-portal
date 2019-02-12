@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a6f6310a-2a33-4fe0-ae64-e6bcc0e0c8d0" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-223469834">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/app.js" />
+        <option value="$PROJECT_DIR$/app/js/newsApiService.js" />
+        <option value="$PROJECT_DIR$/app/js/App.js" />
+        <option value="$PROJECT_DIR$/app/loaders/jsonCustomLoader.js" />
+        <option value="$PROJECT_DIR$/loaders/jsonCustomLoader.js" />
+        <option value="$PROJECT_DIR$/loaders/jsonParsingLoader.js" />
+        <option value="$PROJECT_DIR$/loaders/json-parse-loader.js" />
+        <option value="$PROJECT_DIR$/app/assets/jsonExample.json" />
+        <option value="$PROJECT_DIR$/loaders/json-delete-numeric-attributes-loader.js" />
+        <option value="$PROJECT_DIR$/webpack.common.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/js/components/App.js" />
+        <option value="$PROJECT_DIR$/app/styles/_show-news-portal-button.scss" />
+        <option value="$PROJECT_DIR$/app/index.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="news-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news-portal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="news-app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="news-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f172cc40-f649-4c7d-a5bd-85dc3083852e" name="Default Changelist" comment="" />
+      <created>1542090965741</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542090965741</updated>
+      <workItem from="1542090966907" duration="9213000" />
+      <workItem from="1542203242242" duration="6060000" />
+      <workItem from="1543413803741" duration="12004000" />
+      <workItem from="1543426604774" duration="3763000" />
+      <workItem from="1549979727933" duration="403000" />
+    </task>
+    <task id="LOCAL-00001" summary="add news api basic query">
+      <created>1542100466214</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542100466214</updated>
+    </task>
+    <task id="LOCAL-00002" summary="split to classes">
+      <created>1542208698652</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542208698652</updated>
+    </task>
+    <task id="LOCAL-00003" summary="custom loader implementation">
+      <created>1543428121708</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1543428121708</updated>
+    </task>
+    <task id="LOCAL-00004" summary="adding url-loader">
+      <created>1543428619385</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1543428619385</updated>
+    </task>
+    <task id="LOCAL-00005" summary="little style fixes for cross-browser support">
+      <created>1543429518042</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1543429518042</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="66000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18018967" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32925472" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32925472" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2914349" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add news api basic query" />
+    <MESSAGE value="split to classes" />
+    <MESSAGE value="custom loader implementation" />
+    <MESSAGE value="adding url-loader" />
+    <MESSAGE value="little style fixes for cross-browser support" />
+    <option name="LAST_COMMIT_MESSAGE" value="little style fixes for cross-browser support" />
+  </component>
+</project>

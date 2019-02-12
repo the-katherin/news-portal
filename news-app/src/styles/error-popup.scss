@@ -1,0 +1,38 @@
+.error-popup-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    text-align: center;
+
+    &--hidden {
+        display: none;
+    }
+}
+
+.error-popup {
+    font-size: 1.2rem;
+    border: 2px solid red;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+
+    &__header {
+        line-height: 1.2;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__button {
+        padding: 3px 15px;
+        margin-top: 5px;
+        font-size: 1.2rem;
+        border: 1px solid yellow;
+        background: goldenrod;
+
+        &:hover {
+            cursor: pointer;
+            background: gold;
+        }
+    }
+}
+

@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 5px 15px;
+
+    .filter {
+        > button {
+            margin-left: 15px;
+        }
+    }
+
+}

@@ -1,0 +1,56 @@
+<p>
+    article-form works!
+</p>
+
+<form [formGroup]="articleFormGroup" (ngSubmit)="onSubmit()">
+    <div>
+        <p>Heading</p>
+        <input type="text" [formControl]="headingControl">
+        <p *ngIf="headingControl.errors?.required">*Required</p>
+    </div>
+    <div>
+        <p>Short description</p>
+        <input type="text" [formControl]="shortDescriptionControl">
+        <!-- <p *ngIf="shortDescriptionControl.errors?.required">*Required</p> -->
+    </div>
+    <div>
+        <p>Content</p>
+        <textarea [formControl]="contentControl"></textarea>
+        <!-- <p *ngIf="contentControl.errors?.required">*Required</p> -->
+    </div>
+    <div>
+        <label>Image</label>
+        <input type="radio" name="imgType" value="image" checked [formControl]="imgTypeControl">
+        <label>Url</label>
+        <input type="radio" name="imgType" value="url" [formControl]="imgTypeControl">
+        <input type="text" [formControl]="imgUrlControl">
+        <!-- <p *ngIf="shortDescriptionControl.errors?.required">*Required</p> -->
+    </div>
+
+    <div>
+        <p>Date</p>
+        <input type="text" [formControl]="dateControl">
+        <!-- <p *ngIf="shortDescriptionControl.errors?.required">*Required</p> -->
+    </div>
+    <div>
+        <p>Author</p>
+        <input type="text" [formControl]="authorControl">
+        <!-- <p *ngIf="shortDescriptionControl.errors?.required">*Required</p> -->
+    </div>
+    <div>
+        <p>Source</p>
+        <input type="text" [formControl]="sourceControl">
+        <!-- <p *ngIf="shortDescriptionControl.errors?.required">*Required</p> -->
+    </div>
+
+    <!-- <div>
+        <label>Image</label>
+        <input type="radio" [formControl]="sendEmailsControl">
+    </div> -->
+    <button type="submit" [disabled]="isDisabled">Save</button>
+</form>
+<!-- <h1>Full data: {{fullData}}</h1> -->
+<!-- <button (click)="submitForm()">Save</button> -->
+<!-- <button (click)="submitForm()"><a roterLink='/'>Save</a></button> -->
+
+<button><a routerLink="/">Cancel</a></button>

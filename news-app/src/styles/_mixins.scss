@@ -1,0 +1,23 @@
+@import "config";
+
+@mixin breakpoint($point) {
+    @if $point == mobile-screen {
+        @media (min-width: $mobile-screen) {
+            @content;
+        }
+    } @else if $point == tablet-screen {
+        @media (min-width: $tablet-screen) {
+            @content;
+        }
+    } @else if $point == normal-screen {
+        @media (min-width: $normal-screen) {
+            @content;
+        }
+    } @else if $point == wide-screen {
+        @media (min-width: $wide-screen) {
+            @content;
+        }
+    } @else {
+        @warn "Breakpoint mixin supports: mobile-screen, tablet-screen, normal-screen";
+    }
+}

@@ -1,0 +1,64 @@
+@import 'mixins';
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    min-width: 320px;
+    height: $topbar-height;
+    display: flex;
+    align-items: center;
+    color: $topbar-font-color;
+    background: $topbar-color;
+    box-shadow: 0px 3px 5px -1px rgba(117,117,117,1);
+
+    font-size: 14px;
+
+    @include breakpoint(tablet-screen) {
+        font-size: 18px;
+    }
+    @include breakpoint(normal-screen) {
+        font-size: 20px;
+    }
+    @include breakpoint(wide-screen) {
+        font-size: 24px;
+    }
+
+    &__title {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        font-family: 'abelregular';
+        font-size: 1.5em;
+        padding-top: 13px;
+
+        @include breakpoint(tablet-screen) {
+            padding-top: 8px;
+        }
+        @include breakpoint(normal-screen) {
+            padding-top: 6px;
+        }
+        @include breakpoint(wide-screen) {
+            padding-top: 3px;
+        }
+    }
+    
+    &__button {
+        padding-left: 10px;
+        @include breakpoint(tablet-screen) {
+            padding-left: 20px;
+        }
+        @include breakpoint(wide-screen) {
+            padding-left: 30px;
+        }
+        font-family: 'news_cyclebold';
+        font-size: 0.9em;
+        cursor: pointer;
+        &:hover{
+            color: $topbar-hover-font-color;
+        }
+    }
+}

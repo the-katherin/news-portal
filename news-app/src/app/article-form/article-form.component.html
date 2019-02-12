@@ -1,20 +1,22 @@
 <form [formGroup]="articleFormGroup" (ngSubmit)="onSubmit()">
     <div>
+    <div>
         <p>Title</p>
         <input type="text" [formControl]="headingControl">
     </div>
     <div>
         <p>Description</p>
-        <textarea [formControl]="contentControl"></textarea>
+        <textarea rows="8" [formControl]="contentControl"></textarea>
     </div>
     <div>
         <label>Image</label>
         <input type="radio" name="imgType" value="image" checked [formControl]="imgTypeControl">
         <label>Url</label>
         <input type="radio" name="imgType" value="url" [formControl]="imgTypeControl">
-        <input type="text" [formControl]="imgUrlControl">
+        <div><input type="text" [formControl]="imgUrlControl"> </div>
     </div>
-
+    </div>
+    <div>
     <div>
         <p>Date</p>
         <input type="text" [formControl]="dateControl">
@@ -27,7 +29,10 @@
         <p>Source</p>
         <input type="text" [formControl]="sourceControl">
     </div>
-    <button type="submit" [disabled]="isDisabled">Save</button>
+        <button type="submit" [disabled]="isDisabled">Save</button>
+        <button><a routerLink="/">Cancel</a></button>
+    </div>
+
 </form>
 
-<button><a routerLink="/">Cancel</a></button>
+

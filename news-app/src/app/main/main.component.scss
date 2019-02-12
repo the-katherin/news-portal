@@ -1,0 +1,12 @@
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 10px;
+
+
+    > button {
+
+        margin: 10px;
+        align-self: center;
+    }
+}

@@ -1,0 +1,14 @@
+:host {
+    border: 1px solid black;
+    padding: 5px 15px;
+    margin: 5px 15px;
+
+    .title-container {
+        display: flex;
+        justify-content: space-between;
+        button {
+            margin: 10px;
+        }
+    }
+
+}

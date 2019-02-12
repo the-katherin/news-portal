@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    flex-flow: column;
+
+    form {
+        display: flex;
+        flex-flow: row;
+
+        > div {
+            margin: 10px;
+        }
+    }
+
+    button {
+        margin: 10px;
+    }
+}

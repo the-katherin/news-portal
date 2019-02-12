@@ -1,0 +1,17 @@
+:host {
+    flex-grow: 1;
+    padding: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 10px;
+    .news-list__item {
+        border: 1px solid grey;
+        padding: 10px;
+    }
+
+    > button {
+
+        margin: 10px;
+        align-self: center;
+    }
+}

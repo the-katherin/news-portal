@@ -5,13 +5,15 @@
     form {
         display: flex;
         flex-flow: row;
+        border: 1px solid grey;
 
         > div {
             margin: 10px;
+            text-align: center;
         }
     }
 
     button {
-        margin: 10px;
+        margin: 30px 15px;
     }
 }

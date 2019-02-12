@@ -27,6 +27,7 @@ export class MainComponent implements OnInit {
 
     ngOnInit() {
         this.showControlsService.onSwitchView(true);
+        this.newsService.onShowOnlyMyArticlesChange(false);
 
         this.generateArticles(this.maxVisibleItems);
 

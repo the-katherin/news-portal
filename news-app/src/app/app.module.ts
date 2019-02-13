@@ -3,18 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
-import { LoginControlsComponent } from './login-controls/login-controls.component';
-import { MainComponent } from './main/main.component';
-import { ControlsPanelComponent } from './controls-panel/controls-panel.component';
-import { AddArticleComponent } from './add-article/add-article.component';
-import { ArticleFormComponent } from './article-form/article-form.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LoginControlsComponent } from './components/login-controls/login-controls.component';
+import { MainComponent } from './pages/main/main.component';
+import { ControlsPanelComponent } from './components/controls-panel/controls-panel.component';
+import { AddArticleComponent } from './pages/add-article/add-article.component';
+import { ArticleFormComponent } from './components/article-form/article-form.component';
 import { ReactiveFormsModule } from '../../node_modules/@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ArticleComponent } from './article/article.component';
-import { SingleArticleViewComponent } from './single-article-view/single-article-view.component';
-import { EditArticleComponent } from './edit-article/edit-article.component';
+import { ArticleComponent } from './components/article/article.component';
+import { SingleArticleViewComponent } from './pages/single-article-view/single-article-view.component';
+import { EditArticleComponent } from './pages/edit-article/edit-article.component';
+import { SelectComponent } from './ui/select/select.component';
+import { InputComponent } from './ui/input/input.component';
+import { CheckboxComponent } from './ui/checkbox/checkbox.component';
+import { ArticlesListComponent } from './components/articles-list/articles-list.component';
 
 
 @NgModule({
@@ -29,7 +33,11 @@ import { EditArticleComponent } from './edit-article/edit-article.component';
         ArticleFormComponent,
         ArticleComponent,
         SingleArticleViewComponent,
-        EditArticleComponent
+        EditArticleComponent,
+        SelectComponent,
+        InputComponent,
+        CheckboxComponent,
+        ArticlesListComponent
     ],
     imports: [
         BrowserModule,

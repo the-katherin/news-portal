@@ -1,0 +1,60 @@
+@import '../../../styles/mixins';
+
+:host {
+    display: flex;
+    padding: 5px 15px;
+    margin: 5px 15px;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+
+
+
+    .title-container {
+        display: flex;
+        justify-content: space-between;
+        button {
+            margin: 10px;
+        }
+    }
+
+}
+
+.news-list__item {
+    border: 1px solid grey;
+    padding: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    max-width: 250px;
+
+    @include breakpoint (mobile-screen) {
+        max-width: 300px;;
+    }
+    @include breakpoint(normal-screen) {
+        max-width: 350px;
+    }
+    @include breakpoint(wide-screen) {
+        max-width: 500px;
+    }
+
+    .news__image{
+        max-width: 250px;
+
+        @include breakpoint (mobile-screen) {
+            max-width: 300px;
+        }
+        @include breakpoint(normal-screen) {
+            max-width: 350px;
+        }
+        @include breakpoint(wide-screen) {
+            max-width: 500px;
+        }
+    }
+    .news-title{
+        cursor: pointer;
+    }
+    .news-info {
+        font-size: 0.8rem;
+    }
+}

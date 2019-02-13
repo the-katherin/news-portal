@@ -1,0 +1,20 @@
+<div *ngIf="article" class="news-list__item news">
+    <img class='news__image' src={{article.urlToImage}}>
+    <div class="news__content">
+        <h2 class='news-title'>
+            {{article.title}}
+        </h2>
+        <p class='news-description'>{{article.description}}</p>
+        <p classs='news-author'>Author: {{article.author}}</p>
+        <div class='news-info'>
+            <span class='news-date'>Date: {{article.publishedAt}} | </span>
+            <span class="news-source">Source: {{article.sourceName}}</span>
+        </div>
+    </div>
+</div>
+
+<p *ngIf="!article">
+    No such article
+</p>
+
+<button><a routerLink="/">Back to news</a></button>

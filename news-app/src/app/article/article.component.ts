@@ -38,7 +38,7 @@ export class ArticleComponent implements OnInit {
        this.author = this.article.author;
        this.date = this.article.publishedAt;
        this.name = this.article.sourceName;
-       this.editLink = `edit/${this.article.id}`;
+       this.editLink = `articles-edit/${this.article.id}`;
     }
 
     deleteArticle() {

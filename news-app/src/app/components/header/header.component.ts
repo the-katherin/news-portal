@@ -9,8 +9,6 @@ import { TitleService } from '../../services/title.service';
 })
 export class HeaderComponent implements OnInit {
 
-    @Input() pageTitle: string;
-
     public showControls: boolean;
     public title: string;
 

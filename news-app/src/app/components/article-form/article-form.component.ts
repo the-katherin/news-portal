@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import {MyArticlesService} from '../../services/my-articles.service';
 
 @Component({
     selector: 'article-form',
@@ -15,8 +17,11 @@ export class ArticleFormComponent implements OnInit {
         description: string,
         author: string,
         publishedAt: string,
-        sourceName: string,
+        source: string,
     };
+
+    @Input() isEditMode: boolean;
+    @Input() articleId: string;
 
     public headingControl: FormControl = new FormControl('', Validators.required);
     public contentControl: FormControl = new FormControl('', Validators.required);
@@ -28,7 +33,11 @@ export class ArticleFormComponent implements OnInit {
     public isDisabled: boolean;
     public articleFormGroup: FormGroup;
 
-    constructor(private fb: FormBuilder) { }
+    constructor(
+        private fb: FormBuilder,
+        private myArticlesService: MyArticlesService,
+        private router: Router,
+    ) { }
 
     ngOnInit() {
 
@@ -38,7 +47,7 @@ export class ArticleFormComponent implements OnInit {
             this.imgUrlControl.setValue(this.article.url);
             this.dateControl.setValue(this.article.publishedAt);
             this.authorControl.setValue(this.article.author);
-            this.sourceControl.setValue(this.article.sourceName);
+            this.sourceControl.setValue(this.article.source);
 
             this.isDisabled = false;
         } else {
@@ -55,18 +64,36 @@ export class ArticleFormComponent implements OnInit {
 
     public buildForm(): void {
         this.articleFormGroup = this.fb.group({
-            heading: this.headingControl,
-            content: this.contentControl,
+            title: this.headingControl,
+            description: this.contentControl,
             imgType: this.imgTypeControl,
-            imgUrl: this.imgUrlControl,
-            date: this.dateControl,
+            urlToImage: this.imgUrlControl,
+            publishedAt: this.dateControl,
             author: this.authorControl,
             source: this.sourceControl,
-        })
+        });
     }
 
     public onSubmit(): void {
-        console.log('Saved');
+        const newArticle = this.articleFormGroup.value;
+
+        if (this.isEditMode) {
+            this.myArticlesService.editArticle(newArticle, this.articleId).subscribe(
+                () => {
+                    alert('Successfully updated');
+                    this.router.navigate(['/']);
+                },
+                (error) => console.log('error here:', error)
+            );
+        } else {
+            this.myArticlesService.addArticle(newArticle).subscribe(
+                () => {
+                    alert('Successfully saved');
+                    this.router.navigate(['/']);
+                },
+                (error) => console.log('error here:', error)
+            );
+        }
     }
 
 }

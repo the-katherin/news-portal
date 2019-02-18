@@ -11,7 +11,7 @@ export class AddArticleComponent implements OnInit {
     constructor(private titleService: TitleService) { }
 
     ngOnInit() {
-        this.titleService.onChangeTitle('Add Article');
+        this.titleService.onChangeTitle('add article');
     }
 
 }

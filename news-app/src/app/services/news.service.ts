@@ -1,6 +1,8 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { newsApiArticles, myArticles } from '../../data/news.js';
 import { ApiService } from './api.service';
+import { MyArticlesService } from './my-articles.service';
+import { Article, MyArticle } from '../interfaces';
 
 import uuidv1 from 'uuid/v1';
 
@@ -10,72 +12,59 @@ import uuidv1 from 'uuid/v1';
 export class NewsService {
 
     public showOnlyMyArticles: boolean;
-    public newsApiArticles: any; // todo array
+    public newsApiArticles: any;
     public myArticles: object;
     public channel: string;
     public allArticles: object;
 
-    constructor(private apiService: ApiService) {
-        this.showOnlyMyArticles = false;
+    constructor(
+        private apiService: ApiService,
+        private myArticlesService: MyArticlesService,
 
-        // this.myArticles = myArticles;
-        // this.allArticles = this.generateArticles();
+    ) {
+        this.showOnlyMyArticles = false;
     }
 
     public switchChannel: EventEmitter<string> = new EventEmitter();
     public switchArticles: EventEmitter<boolean> = new EventEmitter();
+    public updateArticles: EventEmitter<any> = new EventEmitter();
 
     onChangeChannel(channel: string) {
         this.channel = channel;
         this.getNewsApiArticles(channel);
     }
 
-    generateArticles() { // all articles
-        const allArticles = [];
-
-        for (const key in newsApiArticles) {
-            const articlesArray = newsApiArticles[key];
-
-            for (const item of articlesArray) {
-                allArticles.push(item);
-            }
-        }
-
-        for (const item of myArticles) {
-            allArticles.push(item);
-        }
-
-        return allArticles;
+    onUpdateMyArticles() {
+        this.getMyArticles();
     }
 
     onShowOnlyMyArticlesChange(value: boolean) {
         this.showOnlyMyArticles = value;
+        this.getMyArticles();
         this.switchArticles.emit(value);
+    }
 
-        this.apiService.getMyArticles().subscribe(
-            (articles: any) => {
+    getMyArticles() {
+        this.myArticlesService.getMyArticles().subscribe(
+            (articles: Array<MyArticle>) => {
                 this.myArticles = articles;
-                console.log(this.myArticles);
+                this.updateArticles.emit();
             },
             (error) => console.log(error)
         );
-
     }
 
     getNewsApiArticles(channel) {
         this.apiService.getArticles(channel).subscribe(
-            (articles: any) => {
+            (articles: Array<Article>) => {
                 this.newsApiArticles = this.setArticleIds(articles);
-                console.log(this.newsApiArticles);
                 this.switchChannel.emit(channel);
             },
             (error) => console.log(error)
-        )
+        );
     }
 
     setArticleIds(articles) {
-        return articles.map(article => ({ ...article, id: uuidv1() }));
+        return articles.map(article => ({ ...article, _id: uuidv1() }));
     }
-
-
 }

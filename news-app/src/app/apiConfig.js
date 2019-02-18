@@ -5,6 +5,8 @@ const NEWS_API_URL = 'https://newsapi.org/v2/';
 const NEWS_ENDPOINT = 'everything?';
 const SOURCES_ENDPOINT = 'sources?';
 
+const MY_ARTICLES_ENDPOINT = 'https://kate-news-db.herokuapp.com/news';
+
 const DEFAULT_HEADERS = {
     'Content-Type': 'application/json',
 };
@@ -14,6 +16,7 @@ export {
     COUNTRY,
     DEFAULT_HEADERS,
     LANGUAGE,
+    MY_ARTICLES_ENDPOINT,
     NEWS_API_URL,
     NEWS_ENDPOINT,
     SOURCES_ENDPOINT,

@@ -10,22 +10,22 @@ import {
     NEWS_ENDPOINT,
     SOURCES_ENDPOINT,
 } from '../apiConfig';
+import {GetArticlesResponse, GetChannelsResponse} from '../interfaces';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ApiService {
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {
+    }
 
     getChannelsList() {
         const urlForSources = `${NEWS_API_URL}${SOURCES_ENDPOINT}language=${LANGUAGE}&country=${COUNTRY}&apiKey=${API_KEY}`;
 
-        return this.http.get<any>(urlForSources) // todo interface
+        return this.http.get(urlForSources)
             .pipe(
-                map((response: any) => { // todo interface
-                    console.log('response', response);
-
+                map((response: GetChannelsResponse) => {
                     return response.sources || [];
                 })
             );
@@ -34,45 +34,11 @@ export class ApiService {
     getArticles(channel) {
         const url = `${NEWS_API_URL}${NEWS_ENDPOINT}q=news&sources=${channel}&language=${LANGUAGE}&apiKey=${API_KEY}`;
 
-        return this.http.get<any>(url)// todo interface
+        return this.http.get(url)
             .pipe(
-                map((response: any) => {
-                    console.log('response', response);
-
+                map((response: GetArticlesResponse) => {
                     return response.articles || [];
                 })
             );
     }
-
-    getMyArticles() {
-        const url = `https://kate-news-db.herokuapp.com/news`;
-
-        return this.http.get<any>(url) // todo interface
-        // .pipe(
-        //     map((response: any) => {
-        //         console.log('response', response);
-
-        //         return response || [];
-        //     })
-        // );
-    }
-    // const result = await ChannelsRepo.loadData(urlForSources);
-    // const channelsList = result ? result.sources : [];
-    // return channelsList;
-
-    // getNews(){
-    //     return this.http.get<any>('https://newsapi.org/v1/articles?source=bbc-news&apiKey=554109c975e14549b32eb8b2f41fe8f8')
-    //         .pipe(
-    //             map((response: any) => {
-    //                 console.log('response', response);
-    //                 // const data = response.json();
-    //                 return response.articles;
-    //             })
-    //         );
-    // }
-
-    // storeArticles(articles: any[]){
-    //     console.log(articles);
-    //     return this.http.put('https://angular-test-91dc6.firebaseio.com/data.json', articles);
-    // }
 }

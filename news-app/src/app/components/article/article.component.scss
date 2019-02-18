@@ -42,13 +42,13 @@
         max-width: 250px;
 
         @include breakpoint (mobile-screen) {
-            max-width: 300px;
+            max-width: 250px;
         }
         @include breakpoint(normal-screen) {
-            max-width: 350px;
+            max-width: 300px;
         }
         @include breakpoint(wide-screen) {
-            max-width: 500px;
+            max-width: 450px;
         }
     }
     .news-title{

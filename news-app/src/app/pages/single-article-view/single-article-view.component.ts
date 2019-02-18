@@ -9,7 +9,8 @@ import { NewsService } from '../../services/news.service';
 })
 export class SingleArticleViewComponent implements OnInit {
 
-    public article: object;
+    public article: any;
+    public articleSourceName: string;
 
     constructor(
         private route: ActivatedRoute,
@@ -21,7 +22,8 @@ export class SingleArticleViewComponent implements OnInit {
         const { showOnlyMyArticles } = this.newsService;
         const articles = !showOnlyMyArticles ? this.newsService.newsApiArticles : this.newsService.myArticles;
         //@ts-ignore
-        this.article = articles.find(articleItem => articleItem.id === articleId);
+        this.article = articles.find(articleItem => articleItem._id === articleId);
+        this.articleSourceName = typeof this.article.source === 'string' ? this.article.source : this.article.source.name;
     }
 
 }

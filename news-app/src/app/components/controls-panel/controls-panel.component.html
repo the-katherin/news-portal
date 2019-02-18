@@ -2,8 +2,8 @@
 </app-select>
 
 <div class="filter">
-    <app-input></app-input>
-    <button>Filter</button>
+    <input type="text" #filterInput/>
+    <button (click)="changeFilter(filterInput.value)">Filter</button>
 </div>
 
 <app-checkbox [checkBoxLabel]="checkBoxLabel" (check)="onShowOnlyMyArticlesChange($event)">

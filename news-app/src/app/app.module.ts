@@ -16,9 +16,9 @@ import { ArticleComponent } from './components/article/article.component';
 import { SingleArticleViewComponent } from './pages/single-article-view/single-article-view.component';
 import { EditArticleComponent } from './pages/edit-article/edit-article.component';
 import { SelectComponent } from './ui/select/select.component';
-import { InputComponent } from './ui/input/input.component';
 import { CheckboxComponent } from './ui/checkbox/checkbox.component';
 import { ArticlesListComponent } from './components/articles-list/articles-list.component';
+import { ArticlesFilterPipe } from './pipes/articles-filter.pipe';
 
 
 @NgModule({
@@ -35,9 +35,9 @@ import { ArticlesListComponent } from './components/articles-list/articles-list.
         SingleArticleViewComponent,
         EditArticleComponent,
         SelectComponent,
-        InputComponent,
         CheckboxComponent,
-        ArticlesListComponent
+        ArticlesListComponent,
+        ArticlesFilterPipe,
     ],
     imports: [
         BrowserModule,

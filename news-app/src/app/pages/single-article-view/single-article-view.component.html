@@ -7,8 +7,8 @@
         <p class='news-description'>{{article.description}}</p>
         <p classs='news-author'>Author: {{article.author}}</p>
         <div class='news-info'>
-            <span class='news-date'>Date: {{article.publishedAt}} | </span>
-            <span class="news-source">Source: {{article.sourceName}}</span>
+            <span class='news-date'>Date: {{article.publishedAt | date: format}} | </span>
+            <span class="news-source">Source: {{articleSourceName}}</span>
         </div>
     </div>
 </div>

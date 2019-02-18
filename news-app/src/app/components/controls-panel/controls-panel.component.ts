@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TitleService } from '../../services/title.service';
 import { NewsService } from '../../services/news.service';
 import { ApiService } from '../../services/api.service';
+import { FilterService } from '../../services/filter.service';
+import {Channel} from '../../interfaces';
 
 @Component({
     selector: 'controls-panel',
@@ -19,6 +21,7 @@ export class ControlsPanelComponent implements OnInit {
         private titleService: TitleService,
         private newsService: NewsService,
         private apiService: ApiService,
+        private filterService: FilterService,
     ) {
         this.checkBoxLabel = 'Only created by me';
     }
@@ -33,7 +36,7 @@ export class ControlsPanelComponent implements OnInit {
         const channelName = this.channels.find(channel => channel.id === channelId).name;
 
         this.titleService.onChangeTitle(channelName);
-        this.newsService.onChangeChannel(channelId); // todo check
+        this.newsService.onChangeChannel(channelId);
     }
 
     onShowOnlyMyArticlesChange(value) {
@@ -53,14 +56,15 @@ export class ControlsPanelComponent implements OnInit {
 
     getChannels() { // todo maybe move to news service or channels service
         this.apiService.getChannelsList().subscribe(
-            (channels: any) => {
-                console.log(channels);
-
+            (channels: Array<Channel>) => {
                 this.channels = channels;
                 this.onChannelChange(channels[0].id);
             },
             (error) => console.log(error)
-        )
+        );
     }
 
+    changeFilter(keyword: string) {
+        this.filterService.onChangeKeyword(keyword);
+    }
 }

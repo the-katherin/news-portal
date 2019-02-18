@@ -1,13 +1,14 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.scss']
+    selector: 'app-select',
+    templateUrl: './select.component.html',
+    styleUrls: ['./select.component.scss']
 })
 export class SelectComponent implements OnInit {
 
     @Input() isSelectDisabled: boolean;
+    @Input() channels: object;
     @Output() selectValue: EventEmitter<string> = new EventEmitter();
 
     constructor() { }
@@ -16,7 +17,7 @@ export class SelectComponent implements OnInit {
     }
 
     onSelectChange(e) {
-       this.selectValue.emit(e.target.value);
+        this.selectValue.emit(e.target.value);
     }
 
 }

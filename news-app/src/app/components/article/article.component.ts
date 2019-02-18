@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ArticleComponent implements OnInit {
 
     @Input() article: {
-        url: string,
+        urlToImage: string,
         title: string,
         id: number,
         description: string,
@@ -19,7 +19,7 @@ export class ArticleComponent implements OnInit {
 
     @Input() renderEditButtons: boolean;
 
-    public url: string;
+    public urlToImage: string;
     public routerLink: string;
     public title: string;
     public description: string;
@@ -31,14 +31,14 @@ export class ArticleComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-       this.url = this.article.url;
-       this.routerLink = `articles/${this.article.id}`;
-       this.title = this.article.title;
-       this.description = this.article.description;
-       this.author = this.article.author;
-       this.date = this.article.publishedAt;
-       this.name = this.article.sourceName;
-       this.editLink = `articles-edit/${this.article.id}`;
+        this.urlToImage = this.article.urlToImage || null;
+        this.routerLink = `articles/${this.article.id}`;
+        this.title = this.article.title;
+        this.description = this.article.description;
+        this.author = this.article.author;
+        this.date = this.article.publishedAt;
+        this.name = this.article.sourceName;
+        this.editLink = `articles-edit/${this.article.id}`;
     }
 
     deleteArticle() {

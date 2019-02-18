@@ -1,7 +1,4 @@
-<app-select
-    [isSelectDisabled]="isSelectDisabled"
-    (selectValue)="onChannelChange($event)"
->
+<app-select [channels]="channels" [isSelectDisabled]="isSelectDisabled" (selectValue)="onChannelChange($event)">
 </app-select>
 
 <div class="filter">
@@ -9,10 +6,7 @@
     <button>Filter</button>
 </div>
 
-<app-checkbox
-    [checkBoxLabel]="checkBoxLabel"
-    (check)="onShowOnlyMyArticlesChange($event)"
->
+<app-checkbox [checkBoxLabel]="checkBoxLabel" (check)="onShowOnlyMyArticlesChange($event)">
 </app-checkbox>
 
 <button><a routerLink="/articles-add">Add article</a></button>

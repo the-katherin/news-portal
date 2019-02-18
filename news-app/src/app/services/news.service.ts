@@ -1,5 +1,8 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { newsApiArticles, myArticles } from '../../data/news.js';
+import { ApiService } from './api.service';
+
+import uuidv1 from 'uuid/v1';
 
 @Injectable({
     providedIn: 'root'
@@ -7,17 +10,16 @@ import { newsApiArticles, myArticles } from '../../data/news.js';
 export class NewsService {
 
     public showOnlyMyArticles: boolean;
-    public newsApiArticles: object;
+    public newsApiArticles: any; // todo array
     public myArticles: object;
     public channel: string;
     public allArticles: object;
 
-    constructor() {
-        this.channel = 'BBC';
+    constructor(private apiService: ApiService) {
         this.showOnlyMyArticles = false;
-        this.newsApiArticles = newsApiArticles;
-        this.myArticles = myArticles;
-        this.allArticles = this.generateArticles();
+
+        // this.myArticles = myArticles;
+        // this.allArticles = this.generateArticles();
     }
 
     public switchChannel: EventEmitter<string> = new EventEmitter();
@@ -25,10 +27,10 @@ export class NewsService {
 
     onChangeChannel(channel: string) {
         this.channel = channel;
-        this.switchChannel.emit(channel);
+        this.getNewsApiArticles(channel);
     }
 
-    generateArticles() {
+    generateArticles() { // all articles
         const allArticles = [];
 
         for (const key in newsApiArticles) {
@@ -49,6 +51,30 @@ export class NewsService {
     onShowOnlyMyArticlesChange(value: boolean) {
         this.showOnlyMyArticles = value;
         this.switchArticles.emit(value);
+
+        this.apiService.getMyArticles().subscribe(
+            (articles: any) => {
+                this.myArticles = articles;
+                console.log(this.myArticles);
+            },
+            (error) => console.log(error)
+        );
+
+    }
+
+    getNewsApiArticles(channel) {
+        this.apiService.getArticles(channel).subscribe(
+            (articles: any) => {
+                this.newsApiArticles = this.setArticleIds(articles);
+                console.log(this.newsApiArticles);
+                this.switchChannel.emit(channel);
+            },
+            (error) => console.log(error)
+        )
+    }
+
+    setArticleIds(articles) {
+        return articles.map(article => ({ ...article, id: uuidv1() }));
     }
 
 

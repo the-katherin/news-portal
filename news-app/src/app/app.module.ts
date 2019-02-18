@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,6 @@ import { ControlsPanelComponent } from './components/controls-panel/controls-pan
 import { AddArticleComponent } from './pages/add-article/add-article.component';
 import { ArticleFormComponent } from './components/article-form/article-form.component';
 import { ReactiveFormsModule } from '../../node_modules/@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { ArticleComponent } from './components/article/article.component';
 import { SingleArticleViewComponent } from './pages/single-article-view/single-article-view.component';
 import { EditArticleComponent } from './pages/edit-article/edit-article.component';

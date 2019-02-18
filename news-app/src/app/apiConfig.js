@@ -3,7 +3,6 @@ const COUNTRY = 'us';
 const LANGUAGE = 'en';
 const NEWS_API_URL = 'https://newsapi.org/v2/';
 const NEWS_ENDPOINT = 'everything?';
-const PAGE_SIZE = 10;
 const SOURCES_ENDPOINT = 'sources?';
 
 const DEFAULT_HEADERS = {
@@ -17,7 +16,6 @@ export {
     LANGUAGE,
     NEWS_API_URL,
     NEWS_ENDPOINT,
-    PAGE_SIZE,
     SOURCES_ENDPOINT,
 };
 

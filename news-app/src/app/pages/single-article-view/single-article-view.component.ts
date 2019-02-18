@@ -18,9 +18,10 @@ export class SingleArticleViewComponent implements OnInit {
 
     ngOnInit() {
         const articleId = this.route.snapshot.params.id;
-        const { allArticles } = this.newsService;
+        const { showOnlyMyArticles } = this.newsService;
+        const articles = !showOnlyMyArticles ? this.newsService.newsApiArticles : this.newsService.myArticles;
         //@ts-ignore
-        this.article = allArticles.find((articleItem) => articleItem.id === articleId);
+        this.article = articles.find(articleItem => articleItem.id === articleId);
     }
 
 }

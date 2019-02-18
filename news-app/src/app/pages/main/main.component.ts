@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
         private newsService: NewsService,
     ) {
         this.isLoadButtonVisible = false;
-        this.defaultVisibleItemsLength = 2;
+        this.defaultVisibleItemsLength = 4;
         this.maxVisibleItems = this.defaultVisibleItemsLength;
         this.renderEditButtons = this.newsService.showOnlyMyArticles;
     }
@@ -30,7 +30,7 @@ export class MainComponent implements OnInit {
         this.newsService.onShowOnlyMyArticlesChange(false);
         this.renderEditButtons = false;
 
-        this.generateArticles(this.maxVisibleItems);
+        // this.generateArticles(this.maxVisibleItems);
 
         this.newsService.switchChannel.subscribe((channel: string) => {
             this.maxVisibleItems = this.defaultVisibleItemsLength;
@@ -49,8 +49,9 @@ export class MainComponent implements OnInit {
     }
 
     generateArticles(maxVisibleItems) {
-        const { channel, showOnlyMyArticles } = this.newsService;
-        const articles = !showOnlyMyArticles ? this.newsService.newsApiArticles[channel] : this.newsService.myArticles;
+        // debugger;
+        const { showOnlyMyArticles } = this.newsService;
+        const articles = !showOnlyMyArticles ? this.newsService.newsApiArticles : this.newsService.myArticles;
         const totalArticlesLength = articles.length;
 
         if (this.maxVisibleItems >= totalArticlesLength) {

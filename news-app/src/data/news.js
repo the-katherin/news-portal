@@ -120,6 +120,26 @@ const myArticles = [
         url: 'url',
         urlToImage: 'urlToImage',
     },
+    {
+        id: '4848477474ddd75414865',
+        author: 'me',
+        description: 'velit accusamus at debitis alias commodi temporibus dicta doloribus, ut labore perspiciatis aut animi quidem, nulla sint libero omnis facere accusantium voluptatum quasi voluptate maxime totam. Ducimus, quisquam dolorem?',
+        publishedAt: 'date',
+        sourceName: 'source',
+        title: 'Titleee',
+        url: 'url',
+        urlToImage: 'urlToImage',
+    },
+    {
+        id: '48484878747gggd7765',
+        author: 'me',
+        description: 'velit accusamus at debitis alias commodi temporibus dicta doloribus, ut labore perspiciatis aut animi quidem, nulla sint libero omnis facere accusantium voluptatum quasi voluptate maxime totam. Ducimus, quisquam dolorem?',
+        publishedAt: 'date',
+        sourceName: 'source',
+        title: 'Titleee',
+        url: 'url',
+        urlToImage: 'urlToImage',
+    }
 ];
 
 export { newsApiArticles, myArticles };

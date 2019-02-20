@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ShowControlsService } from '../../services/show-controls.service';
+import {Component, OnInit} from '@angular/core';
 import { TitleService } from '../../services/title.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-header',
@@ -9,19 +9,14 @@ import { TitleService } from '../../services/title.service';
 })
 export class HeaderComponent implements OnInit {
 
-    public showControls: boolean;
     public title: string;
 
     constructor(
-        private showControlsService: ShowControlsService,
+        private router: Router,
         private titleService: TitleService,
     ) { }
 
     ngOnInit() {
-        this.showControlsService.switchControls.subscribe((isVisible: boolean) => {
-            this.showControls = isVisible;
-        });
-
         this.title = this.titleService.title;
 
         this.titleService.changeTitle.subscribe((title: string) => {

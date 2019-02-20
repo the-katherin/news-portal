@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ShowControlsService } from '../../services/show-controls.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { NewsService } from '../../services/news.service';
 import {FilterService} from '../../services/filter.service';
 
@@ -8,7 +7,7 @@ import {FilterService} from '../../services/filter.service';
     templateUrl: './main.component.html',
     styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnDestroy {
 
     public articles: object;
     public isLoadButtonVisible: boolean;
@@ -17,7 +16,6 @@ export class MainComponent implements OnInit {
     public renderEditButtons: boolean;
 
     constructor(
-        private showControlsService: ShowControlsService,
         private newsService: NewsService,
         private filterService: FilterService,
     ) {
@@ -28,7 +26,6 @@ export class MainComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.showControlsService.onSwitchView(true);
         this.newsService.onShowOnlyMyArticlesChange(false);
         this.renderEditButtons = false;
 
@@ -53,7 +50,6 @@ export class MainComponent implements OnInit {
     }
 
     ngOnDestroy() {
-        this.showControlsService.onSwitchView(false);
         this.filterService.onChangeKeyword('');
     }
 

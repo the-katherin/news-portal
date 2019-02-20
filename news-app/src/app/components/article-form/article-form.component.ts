@@ -11,7 +11,7 @@ import {MyArticlesService} from '../../services/my-articles.service';
 export class ArticleFormComponent implements OnInit {
 
     @Input() article: {
-        url: string,
+        urlToImage: string,
         title: string,
         id: number,
         description: string,
@@ -41,10 +41,12 @@ export class ArticleFormComponent implements OnInit {
 
     ngOnInit() {
 
+
         if (this.article) {
             this.headingControl.setValue(this.article.title);
             this.contentControl.setValue(this.article.description);
-            this.imgUrlControl.setValue(this.article.url);
+            this.imgUrlControl.setValue(this.article.urlToImage);
+            this.imgTypeControl.setValue(this.article.urlToImage ? "image" : null);
             this.dateControl.setValue(this.article.publishedAt);
             this.authorControl.setValue(this.article.author);
             this.sourceControl.setValue(this.article.source);

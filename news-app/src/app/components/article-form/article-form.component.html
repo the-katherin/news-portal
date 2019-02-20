@@ -10,7 +10,7 @@
     </div>
     <div>
         <label>Image</label>
-        <input type="radio" name="imgType" value="image" checked [formControl]="imgTypeControl">
+        <input type="radio" name="imgType" value="image" [formControl]="imgTypeControl">
         <label>Url</label>
         <input type="radio" name="imgType" value="url" [formControl]="imgTypeControl">
         <div><input type="text" [formControl]="imgUrlControl"> </div>

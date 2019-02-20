@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
     public title: string;
 
     constructor(
-        private router: Router,
+        public router: Router,
         private titleService: TitleService,
     ) { }
 

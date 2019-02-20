@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import { NewsService } from '../../services/news.service';
-import {FilterService} from '../../services/filter.service';
+import { FilterService } from '../../services/filter.service';
 
 @Component({
     selector: 'app-main',
@@ -22,14 +22,11 @@ export class MainComponent implements OnInit, OnDestroy {
         this.isLoadButtonVisible = false;
         this.defaultVisibleItemsLength = 4;
         this.maxVisibleItems = this.defaultVisibleItemsLength;
-        this.renderEditButtons = this.newsService.showOnlyMyArticles;
+        this.renderEditButtons = this.filterService.showOnlyMyArticles;
     }
 
     ngOnInit() {
-        this.newsService.onShowOnlyMyArticlesChange(false);
         this.renderEditButtons = false;
-
-        // this.generateArticles(this.maxVisibleItems);
 
         this.newsService.switchChannel.subscribe((channel: string) => {
             this.filterService.onChangeKeyword('');
@@ -37,8 +34,8 @@ export class MainComponent implements OnInit, OnDestroy {
             this.generateArticles(this.maxVisibleItems);
         });
 
-        this.newsService.switchArticles.subscribe((showOnlyMyArticles: boolean) => {
-            this.filterService.onChangeKeyword('');
+        this.filterService.switchArticles.subscribe((showOnlyMyArticles: boolean) => {
+            this.newsService.onUpdateArticles(showOnlyMyArticles);
             this.renderEditButtons = showOnlyMyArticles;
             this.maxVisibleItems = this.defaultVisibleItemsLength;
             this.generateArticles(this.maxVisibleItems);
@@ -54,8 +51,7 @@ export class MainComponent implements OnInit, OnDestroy {
     }
 
     generateArticles(maxVisibleItems) {
-        const { showOnlyMyArticles } = this.newsService;
-        const articles = !showOnlyMyArticles ? this.newsService.newsApiArticles : this.newsService.myArticles;
+        const articles = this.newsService.articles;
         const totalArticlesLength = articles ? articles.length : null;
 
         if (articles) {

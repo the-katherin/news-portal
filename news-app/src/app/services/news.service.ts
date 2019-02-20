@@ -11,22 +11,18 @@ import uuidv1 from 'uuid/v1';
 })
 export class NewsService {
 
-    public showOnlyMyArticles: boolean;
     public newsApiArticles: any;
     public myArticles: object;
     public channel: string;
-    public allArticles: object;
+    public articles: any;
 
     constructor(
         private apiService: ApiService,
         private myArticlesService: MyArticlesService,
 
-    ) {
-        this.showOnlyMyArticles = false;
-    }
+    ) { }
 
     public switchChannel: EventEmitter<string> = new EventEmitter();
-    public switchArticles: EventEmitter<boolean> = new EventEmitter();
     public updateArticles: EventEmitter<any> = new EventEmitter();
 
     onChangeChannel(channel: string) {
@@ -38,16 +34,16 @@ export class NewsService {
         this.getMyArticles();
     }
 
-    onShowOnlyMyArticlesChange(value: boolean) {
-        this.showOnlyMyArticles = value;
-        this.getMyArticles();
-        this.switchArticles.emit(value);
+
+    onUpdateArticles(showOnlyMyArticles) {
+        showOnlyMyArticles ? this.getMyArticles() : this.getNewsApiArticles(this.channel);
     }
 
     getMyArticles() {
         this.myArticlesService.getMyArticles().subscribe(
             (articles: Array<MyArticle>) => {
                 this.myArticles = articles;
+                this.articles = this.myArticles;
                 this.updateArticles.emit();
             },
             (error) => console.log(error)
@@ -58,6 +54,7 @@ export class NewsService {
         this.apiService.getArticles(channel).subscribe(
             (articles: Array<Article>) => {
                 this.newsApiArticles = this.setArticleIds(articles);
+                this.articles = this.newsApiArticles;
                 this.switchChannel.emit(channel);
             },
             (error) => console.log(error)

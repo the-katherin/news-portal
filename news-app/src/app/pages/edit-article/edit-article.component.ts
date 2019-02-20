@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TitleService } from '../../services/title.service';
 import { NewsService } from '../../services/news.service';
+import {FilterService} from '../../services/filter.service';
 
 @Component({
     selector: 'app-edit-article',
@@ -18,6 +19,7 @@ export class EditArticleComponent implements OnInit {
         private titleService: TitleService,
         private newsService: NewsService,
         private route: ActivatedRoute,
+        private filterService: FilterService,
     ) {
         this.isEditMode = true;
     }
@@ -26,8 +28,8 @@ export class EditArticleComponent implements OnInit {
         this.titleService.onChangeTitle('Edit Article');
 
         this.articleId = this.route.snapshot.params.id;
-        const { showOnlyMyArticles } = this.newsService;
-        const articles = !showOnlyMyArticles ? this.newsService.newsApiArticles : this.newsService.myArticles;
+        const { showOnlyMyArticles } = this.filterService;
+        const articles = this.newsService.articles;
         //@ts-ignore
         this.article = articles.find(articleItem => articleItem._id === this.articleId);
     }

@@ -40,7 +40,7 @@ export class ControlsPanelComponent implements OnInit {
     }
 
     onShowOnlyMyArticlesChange(value) {
-        this.newsService.onShowOnlyMyArticlesChange(value);
+        this.filterService.onShowOnlyMyArticlesChange(value);
         this.isSelectDisabled = value;
 
         if (value) {
@@ -54,7 +54,7 @@ export class ControlsPanelComponent implements OnInit {
         }
     }
 
-    getChannels() { // todo maybe move to news service or channels service
+    getChannels() {
         this.apiService.getChannelsList().subscribe(
             (channels: Array<Channel>) => {
                 this.channels = channels;

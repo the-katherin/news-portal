@@ -79,23 +79,30 @@ export class ArticleFormComponent implements OnInit {
     public onSubmit(): void {
         const newArticle = this.articleFormGroup.value;
 
-        if (this.isEditMode) {
-            this.myArticlesService.editArticle(newArticle, this.articleId).subscribe(
-                () => {
-                    alert('Successfully updated');
-                    this.router.navigate(['/']);
-                },
-                (error) => console.log('error here:', error)
-            );
-        } else {
-            this.myArticlesService.addArticle(newArticle).subscribe(
-                () => {
-                    alert('Successfully saved');
-                    this.router.navigate(['/']);
-                },
-                (error) => console.log('error here:', error)
-            );
+        if (this.articleFormGroup.valid) {
+           this.isEditMode ? this.editArticle(newArticle) : this.addArticle(newArticle);
         }
+
+    }
+
+    addArticle(newArticle) {
+        this.myArticlesService.addArticle(newArticle).subscribe(
+            () => {
+                alert('Successfully saved');
+                this.router.navigate(['/']);
+            },
+            (error) => console.log('error here:', error)
+        );
+    }
+
+    editArticle(newArticle) {
+        this.myArticlesService.editArticle(newArticle, this.articleId).subscribe(
+            () => {
+                alert('Successfully updated');
+                this.router.navigate(['/']);
+            },
+            (error) => console.log('error here:', error)
+        );
     }
 
 }

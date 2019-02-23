@@ -3,7 +3,7 @@ import { TitleService } from '../../services/title.service';
 import { NewsService } from '../../services/news.service';
 import { ApiService } from '../../services/api.service';
 import { FilterService } from '../../services/filter.service';
-import {Channel} from '../../interfaces';
+import { Channel } from '../../interfaces';
 
 @Component({
     selector: 'controls-panel',

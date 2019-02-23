@@ -11,8 +11,11 @@ const DEFAULT_HEADERS = {
     'Content-Type': 'application/json',
 };
 
+const CHANNELS_URL = `${NEWS_API_URL}${SOURCES_ENDPOINT}language=${LANGUAGE}&country=${COUNTRY}&apiKey=${API_KEY}`;
+
 export {
     API_KEY,
+    CHANNELS_URL,
     COUNTRY,
     DEFAULT_HEADERS,
     LANGUAGE,

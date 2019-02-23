@@ -4,13 +4,13 @@ import { map } from 'rxjs/operators';
 
 import {
     API_KEY,
-    COUNTRY,
+    CHANNELS_URL,
     LANGUAGE,
     NEWS_API_URL,
     NEWS_ENDPOINT,
-    SOURCES_ENDPOINT,
 } from '../apiConfig';
-import {GetArticlesResponse, GetChannelsResponse} from '../interfaces';
+
+import { GetArticlesResponse, GetChannelsResponse } from '../interfaces';
 
 @Injectable({
     providedIn: 'root'
@@ -21,7 +21,7 @@ export class ApiService {
     }
 
     getChannelsList() {
-        const urlForSources = `${NEWS_API_URL}${SOURCES_ENDPOINT}language=${LANGUAGE}&country=${COUNTRY}&apiKey=${API_KEY}`;
+        const urlForSources = CHANNELS_URL;
 
         return this.http.get(urlForSources)
             .pipe(

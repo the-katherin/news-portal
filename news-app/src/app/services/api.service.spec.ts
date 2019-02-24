@@ -10,7 +10,7 @@ import {
     NEWS_ENDPOINT
 } from '../apiConfig';
 
-fdescribe('ApiService', () => {
+describe('ApiService', () => {
     let injector: TestBed;
     let service: ApiService;
     let httpMock: HttpTestingController;

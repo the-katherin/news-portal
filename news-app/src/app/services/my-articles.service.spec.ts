@@ -6,7 +6,7 @@ import { MyArticlesService } from './my-articles.service';
 import { MY_ARTICLES_ENDPOINT } from '../apiConfig';
 import { Article, MyArticle } from '../interfaces';
 
-fdescribe('MyArticlesService', () => {
+describe('MyArticlesService', () => {
     let injector: TestBed;
     let service: MyArticlesService;
     let httpMock: HttpTestingController;

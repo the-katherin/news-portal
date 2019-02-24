@@ -1,5 +1,4 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { newsApiArticles, myArticles } from '../../data/news.js';
 import { ApiService } from './api.service';
 import { MyArticlesService } from './my-articles.service';
 import { Article, MyArticle } from '../interfaces';
@@ -33,7 +32,6 @@ export class NewsService {
     onUpdateMyArticles() {
         this.getMyArticles();
     }
-
 
     onUpdateArticles(showOnlyMyArticles) {
         showOnlyMyArticles ? this.getMyArticles() : this.getNewsApiArticles(this.channel);

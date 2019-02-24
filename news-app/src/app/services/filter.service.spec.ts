@@ -2,7 +2,7 @@ import { TestBed, getTestBed } from '@angular/core/testing';
 
 import { FilterService } from './filter.service';
 
-fdescribe('FilterService', () => {
+describe('FilterService', () => {
     let injector: TestBed;
     let service: FilterService;
 

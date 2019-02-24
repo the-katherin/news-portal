@@ -35,7 +35,7 @@ describe('ApiService', () => {
         expect(service).toBeTruthy();
     });
 
-    describe('#getChannelsList', () => {
+    describe('getChannelsList', () => {
         it('should return channels', () => {
             const dummyChannels = [
                 { id: '1', name: 'BBC' },
@@ -53,7 +53,7 @@ describe('ApiService', () => {
         });
     });
 
-    describe('#getArticles', () => {
+    describe('getArticles', () => {
         it('should return articles', () => {
             const dummyArticles = [
                 {

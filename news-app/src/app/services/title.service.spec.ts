@@ -2,7 +2,7 @@ import { TestBed, getTestBed } from '@angular/core/testing';
 
 import { TitleService } from './title.service';
 
-fdescribe('TitleService', () => {
+describe('TitleService', () => {
     const stubTitle = 'Title';
     let injector: TestBed;
     let service: TitleService;

@@ -3,9 +3,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const NewsSchema = new Schema({
-    id: String,
+    author: String,
+    description: String,
     title: String,
-    payload: String,
+    publishedAt: String,
+    urlToImage: String,
+    source: String,
+    imgType: String,
 });
 
-module.exports = mongoose.model('News', NewsSchema);
+module.exports = mongoose.model('Article', NewsSchema);

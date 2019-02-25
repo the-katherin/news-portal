@@ -15,7 +15,7 @@ const GetNews = (req, res, next) => {
 const GetNewsById = (req, res, next) => {
     const { id } = req.params;
 
-    News.find({ id: id }, function (err, newsItem) {
+    News.find({ _id: id}, function (err, newsItem) {
         if (err) {
             next(err);
         } else if (newsItem.length) {
@@ -27,18 +27,13 @@ const GetNewsById = (req, res, next) => {
 };
 
 const CreateNews = (req, res, next) => {
-    const { payload, title } = req.body;
-    const news = {
-        id: uuidv1(),
-        title,
-        payload,
-    };
+    const article = {...req.body};
 
-    News.create({ ...news }, function (err, newsItem) {
+    News.create(article, function (err, newsItem) {
         if (err) {
             next(err);
         } else {
-            res.send(`News is successfully saved: ${newsItem}`);
+            res.send(newsItem);
         }
     })
 };
@@ -48,7 +43,7 @@ const UpdateNews = (req, res, next) => {
     const { id } = req.params;
     const { payload } = req.body;
 
-    News.findOneAndUpdate({ id: id }, { payload: payload }, function (err, newsItem) {
+    News.findOneAndUpdate({ _id: id }, { payload: payload }, function (err, newsItem) {
         if (err) {
             next(err);
         } else if (newsItem) {
@@ -62,7 +57,7 @@ const UpdateNews = (req, res, next) => {
 const DeleteNews = (req, res, next) => {
     const { id } = req.params;
 
-    News.findOneAndDelete({ id: id }, function (err, newsItem) {
+    News.findOneAndDelete({ _id: id }, function (err, newsItem) {
         if (err) {
             next(err);
         } else if (newsItem) {

@@ -25,10 +25,10 @@ router.post('/', CreateNews);
 
 /* PUT payload data to specified news item */
 
-router.put('/:id', authHandler, UpdateNews);
+router.put('/:id', UpdateNews);
 
 /* DELETE specified news item */
 
-router.delete('/:id', authHandler, DeleteNews);
+router.delete('/:id', DeleteNews);
 
 module.exports = router;

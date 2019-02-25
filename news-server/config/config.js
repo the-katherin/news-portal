@@ -1,5 +1,5 @@
 module.exports = {
-    database: 'mongodb://127.0.0.1/lesson8',
+    database: 'mongodb+srv://user_1:2z9OkVemPNDs1ZRj@katecluster-diijm.mongodb.net/frontCamp',
     secret: 'yoursecret',
     facebook: {
         id: "376966159518886",

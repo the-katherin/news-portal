@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b26123f2-a0cb-4854-9e1f-3035c750be65" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/news-server/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-server/spec/news.controller.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-server/test/news.controller.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/news-server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-server/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/news-server/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-server/controllers/news.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/news-server/controllers/news.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-server/db/News.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/news-server/db/News.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/news-server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/news-server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-server/routes/news.js" beforeDir="false" afterPath="$PROJECT_DIR$/news-server/routes/news.js" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-223469834">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="11" />
+          <entry key="json" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JSON" value="3" />
+          <entry key="JavaScript" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="1104" />
+          <entry key="json" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JSON" value="11" />
+          <entry key="JavaScript" value="1104" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.5344101">
+      <split-first>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/news-server/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="391">
+                  <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/news-server/spec/news.controller.spec.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="459">
+                  <caret line="86" column="37" lean-forward="true" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../heroku/kate-news-db/controllers/news.controller.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/news-server/karma.conf.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="272">
+                  <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/news-server/spec/news.controller.spec.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/news-server/controllers/news.controller.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="415">
+                  <caret line="63" column="34" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="34" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/news-server/db/News.model.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="221">
+                  <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>GetNews</find>
+      <find>id</find>
+      <find>console.log</find>
+      <find>console</find>
+      <find>conso</find>
+      <find>newArticleId</find>
+      <find>authhan</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/news-server/config/config.js" />
+        <option value="$PROJECT_DIR$/news-server/app.js" />
+        <option value="$PROJECT_DIR$/news-server/package.json" />
+        <option value="$PROJECT_DIR$/news-server/karma.conf.js" />
+        <option value="$PROJECT_DIR$/news-server/test/news.controller.spec.js" />
+        <option value="$PROJECT_DIR$/news-server/db/News.model.js" />
+        <option value="$PROJECT_DIR$/../../heroku/kate-news-db/controllers/news.controller.js" />
+        <option value="$PROJECT_DIR$/news-server/controllers/news.controller.js" />
+        <option value="$PROJECT_DIR$/news-server/spec/news.controller.spec.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/news-server/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/news-server/node_modules/@types/babel-types/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/@types/babylon/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/accepts/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/acorn-globals/node_modules/acorn/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/acorn-globals/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/acorn/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/agent-base/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/align-text/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/amdefine/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/ansi-align/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/ansi-styles/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/anymatch/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/arr-diff/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/arr-flatten/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/arr-union/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/array-flatten/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/array-unique/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/asap/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/assign-symbols/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/async-each/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/async/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/atob/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/babel-runtime/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/babel-types/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/babylon/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/balanced-match/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/base/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/base/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/base/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/base/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/base/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/base/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/basic-auth/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/binary-extensions/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/bluebird/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/body-parser/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/boxen/node_modules/camelcase/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/boxen/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/brace-expansion/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/braces/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/braces/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/bson/browser_build/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/bson/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/bytes/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/cache-base/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/camelcase/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/capture-stack-trace/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/center-align/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/chalk/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/character-parser/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/chokidar/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/ci-info/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/class-utils/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/class-utils/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/clean-css/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/cli-boxes/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/cliui/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/collection-visit/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/color-convert/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/color-name/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/commander/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/component-emitter/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/concat-map/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/configstore/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/connect-flash/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/constantinople/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/content-disposition/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/content-type/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/cookie-parser/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/cookie-signature/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/cookie/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/copy-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/core-js/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/core-util-is/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/crc/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/create-error-class/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/cross-spawn/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/crypto-random-string/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/decamelize/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/decode-uri-component/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/deep-extend/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/define-property/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/define-property/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/define-property/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/define-property/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/depd/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/destroy/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/doctypes/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/dot-prop/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/duplexer3/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/ee-first/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/encodeurl/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/es6-promise/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/es6-promisify/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/escape-html/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/escape-string-regexp/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/esutils/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/etag/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/execa/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/expand-brackets/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/expand-brackets/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/expand-brackets/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/express-messages/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/express-session/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/express/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/extend-shallow/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/extglob/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/extglob/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/extglob/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/extglob/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/extglob/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/extglob/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/extglob/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/fill-range/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/fill-range/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/finalhandler/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/for-in/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/forwarded/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/fragment-cache/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/fresh/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/function-bind/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/get-stream/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/get-value/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/glob-parent/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/glob-parent/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/global-dirs/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/got/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/graceful-readlink/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/has-flag/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/has-value/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/has-values/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/has-values/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/has/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/http-errors/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/https-proxy-agent/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/https-proxy-agent/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/https-proxy-agent/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/ignore-by-default/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/import-lazy/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/imurmurhash/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/ipaddr.js/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-binary-path/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-buffer/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-ci/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-expression/node_modules/acorn/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-expression/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-fullwidth-code-point/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-installed-globally/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-npm/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-obj/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-path-inside/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-plain-object/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-promise/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-redirect/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-regex/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-retry-allowed/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-stream/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/is-windows/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/isexe/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/js-stringify/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/jstransformer/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/kareem/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/latest-version/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/lazy-cache/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/lodash.debounce/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/lodash/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/longest/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/lowercase-keys/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/make-dir/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/map-cache/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/map-visit/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/media-typer/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/memory-pager/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/merge-descriptors/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/methods/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/micromatch/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/micromatch/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/mime-db/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/mime-types/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/mime/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/mixin-deep/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/mixin-deep/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/mongodb-core/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/mongodb/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/mongoose-legacy-pluralize/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/mongoose/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/morgan/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/mpath/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/mquery/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/mquery/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/nanomatch/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/nanomatch/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/negotiator/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/nodemon/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/nodemon/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/nodemon/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/nopt/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/normalize-path/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/npm-run-path/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/oauth/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/object-assign/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/object-copy/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/object-copy/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/object-visit/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/object.pick/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/on-finished/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/on-headers/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/p-finally/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/package-json/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/parseurl/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pascalcase/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/passport-facebook/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/passport-local/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/passport-oauth2/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/passport-strategy/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/passport/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/path-dirname/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/path-is-absolute/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/path-is-inside/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/path-key/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/path-parse/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/path-to-regexp/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pause/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pify/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/posix-character-classes/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/prepend-http/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/process-nextick-args/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/promise/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/proxy-addr/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pseudomap/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pstree.remy/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pug-attrs/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pug-code-gen/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pug-error/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pug-filters/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pug-lexer/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pug-linker/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pug-load/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pug-parser/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pug-runtime/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pug-strip-comments/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pug-walk/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/pug/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/random-bytes/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/range-parser/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/raw-body/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/rc/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/readdirp/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/regenerator-runtime/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/regex-not/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/regexp-clone/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/registry-auth-token/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/registry-url/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/remove-trailing-separator/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/repeat-element/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/repeat-string/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/require_optional/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/require_optional/test/nestedTest/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/resolve-from/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/resolve-url/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/resolve/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/resolve/test/module_dir/zmodules/bbb/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/resolve/test/resolver/baz/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/resolve/test/resolver/browser_field/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/resolve/test/resolver/dot_main/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/resolve/test/resolver/dot_slash_main/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/resolve/test/resolver/incorrect_main/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/resolve/test/resolver/invalid_main/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/resolve/test/resolver/multirepo/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/resolve/test/resolver/multirepo/packages/package-a/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/resolve/test/resolver/multirepo/packages/package-b/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/ret/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/right-align/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/safe-regex/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/safer-buffer/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/saslprep/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/semver-diff/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/semver/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/send/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/serve-static/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/set-value/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/set-value/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/setprototypeof/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/shebang-command/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/shebang-regex/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/signal-exit/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/sliced/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/snapdragon-node/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/snapdragon-node/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/snapdragon-node/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/snapdragon-node/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/snapdragon-node/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/snapdragon-node/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/snapdragon-util/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/snapdragon/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/snapdragon/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/snapdragon/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/snapdragon/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/source-map-resolve/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/source-map-url/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/sparse-bitfield/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/split-string/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/static-extend/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/static-extend/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/string-width/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/strip-eof/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/strip-json-comments/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/term-size/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/timed-out/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/to-fast-properties/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/to-object-path/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/to-regex-range/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/to-regex/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/token-stream/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/touch/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/type-is/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/uglify-js/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/uglify-js/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/uglify-to-browserify/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/uid-safe/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/uid2/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/undefsafe/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/union-value/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/union-value/node_modules/set-value/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/union-value/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/unique-string/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/unpipe/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/unset-value/node_modules/has-value/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/unset-value/node_modules/has-value/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/unset-value/node_modules/has-values/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/unset-value/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/unzip-response/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/upath/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/update-notifier/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/urix/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/url-parse-lax/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/use/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/util-deprecate/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/utils-merge/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/uuid/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/vary/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/void-elements/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/which/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/widest-line/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/window-size/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/with/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/wordwrap/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/write-file-atomic/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/xdg-basedir/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/yallist/package.json" />
+      <path value="$PROJECT_DIR$/news-server/node_modules/yargs/package.json" />
+      <path value="$PROJECT_DIR$/news-server/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="38" />
+    <option name="y" value="352" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="news-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news-portal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="news-server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="news-server" type="462c0819:PsiDirectoryNode" />
+              <item name="middlewares" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="news-server" type="462c0819:PsiDirectoryNode" />
+              <item name="spec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="news-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="news-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="news-server" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Katsiaryna_Tsiurykav\Documents\Kate\FrontCamp\Projects\news\news-portal\news-server\spec" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <package-json value="$PROJECT_DIR$/news-server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev-start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" factoryName="npm">
+      <package-json value="$PROJECT_DIR$/news-server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev-start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b26123f2-a0cb-4854-9e1f-3035c750be65" name="Default Changelist" comment="" />
+      <created>1551114928021</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1551114928021</updated>
+      <workItem from="1551114929153" duration="10905000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="10905000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32925472" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32925472" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32925472" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/news-server/spec/support/jasmine.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news-server/test/news.controller.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news-server/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-91">
+          <caret line="43" selection-start-line="43" selection-start-column="3" selection-end-line="45" selection-end-column="7" />
+          <folding>
+            <marker date="1551117714509" expanded="true" signature="1120:1254" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news-server/config/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="94" selection-start-line="1" selection-start-column="94" selection-end-line="1" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news-server/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news-server/karma.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news-server/db/News.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../heroku/kate-news-db/controllers/news.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news-server/controllers/news.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="63" column="34" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news-server/spec/news.controller.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="86" column="37" lean-forward="true" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -41,9 +41,9 @@ app.use(session({
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(logger(':url :date[web]', {
-  stream: fs.createWriteStream(path.join(__dirname, 'logs/access.log'), { flags: 'a' })
-}));
+// app.use(logger(':url :date[web]', {
+//   stream: fs.createWriteStream(path.join(__dirname, 'logs/access.log'), { flags: 'a' })
+// }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

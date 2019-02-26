@@ -2,13 +2,19 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 
-const { RegisterUser } = require('../controllers/users.controller');
+const { GetUserByName, GetUsers, RegisterUser, DeleteUser } = require('../controllers/users.controller');
 
 router.get('/register', function (req, res) {
     res.render('register');
 });
 
+router.get('/all', GetUsers);
+
+router.get('/:name', GetUserByName);
+
 router.post('/register', RegisterUser);
+
+router.delete('/:name', DeleteUser);
 
 router.get('/login', function (req, res) {
     res.render('login');

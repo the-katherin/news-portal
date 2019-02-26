@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6f6310a-2a33-4fe0-ae64-e6bcc0e0c8d0" name="Default Changelist" comment="" />
+    <list default="true" id="a6f6310a-2a33-4fe0-ae64-e6bcc0e0c8d0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,9 +18,18 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="756370377">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,8 +63,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
+    <option name="x" value="-7" />
+    <option name="width" value="1934" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -86,6 +98,10 @@
       <pane id="Scope" />
     </panes>
   </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -103,7 +119,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f172cc40-f649-4c7d-a5bd-85dc3083852e" name="Default Changelist" comment="" />
+      <changelist id="a6f6310a-2a33-4fe0-ae64-e6bcc0e0c8d0" name="Default Changelist" comment="" />
       <created>1542090965741</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -113,6 +129,8 @@
       <workItem from="1543413803741" duration="12004000" />
       <workItem from="1543426604774" duration="3763000" />
       <workItem from="1549979727933" duration="403000" />
+      <workItem from="1551197210301" duration="599000" />
+      <workItem from="1551197957721" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="add news api basic query">
       <created>1542100466214</created>
@@ -152,7 +170,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66000" />
+    <option name="totallyTimeSpent" value="669000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />

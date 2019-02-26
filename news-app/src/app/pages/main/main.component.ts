@@ -34,16 +34,16 @@ export class MainComponent implements OnInit, OnDestroy {
             this.generateArticles(this.maxVisibleItems);
         });
 
-        this.filterService.switchArticles.subscribe((showOnlyMyArticles: boolean) => {
-            this.newsService.onUpdateArticles(showOnlyMyArticles);
-            this.renderEditButtons = showOnlyMyArticles;
-            this.maxVisibleItems = this.defaultVisibleItemsLength;
-            this.generateArticles(this.maxVisibleItems);
-        });
-
-        this.newsService.updateArticles.subscribe(() => {
-            this.generateArticles(this.maxVisibleItems);
-        });
+        // this.filterService.switchArticles.subscribe((showOnlyMyArticles: boolean) => {
+        //     this.newsService.onUpdateArticles(showOnlyMyArticles);
+        //     this.renderEditButtons = showOnlyMyArticles;
+        //     this.maxVisibleItems = this.defaultVisibleItemsLength;
+        //     this.generateArticles(this.maxVisibleItems);
+        // });
+        //
+        // this.newsService.updateArticles.subscribe(() => {
+        //     this.generateArticles(this.maxVisibleItems);
+        // });
     }
 
     ngOnDestroy() {

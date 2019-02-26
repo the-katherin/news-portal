@@ -19,7 +19,7 @@ export class ControlsPanelComponent implements OnInit {
 
     constructor(
         private titleService: TitleService,
-        private newsService: NewsService,
+        public newsService: NewsService,
         private apiService: ApiService,
         private filterService: FilterService,
     ) {

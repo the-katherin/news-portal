@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { ArticlesFilterPipe } from '../../pipes/articles-filter.pipe';
+
 import { ArticlesListComponent } from './articles-list.component';
+import {NO_ERRORS_SCHEMA} from "@angular/core";
 
 describe('ArticlesListComponent', () => {
   let component: ArticlesListComponent;
@@ -8,7 +11,8 @@ describe('ArticlesListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArticlesListComponent ]
+        declarations: [ ArticlesListComponent, ArticlesFilterPipe ],
+        schemas: [ NO_ERRORS_SCHEMA ],
     })
     .compileComponents();
   }));

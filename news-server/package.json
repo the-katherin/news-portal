@@ -6,8 +6,7 @@
     "start": "node ./bin/www",
     "dev-start": "set DEBUG=myapp:* & nodemon ./bin/www",
     "test-node": "jasmine-node spec/",
-    "test-node-auto": "jasmine-node spec/ --autotest",
-    "test-cover": "istanbul cover spec/specs.js && istanbul check-coverage"
+    "test-node-auto": "jasmine-node spec/ --autotest"
 
   },
   "dependencies": {

@@ -41,13 +41,13 @@ const CreateNews = (req, res, next) => {
 
 const UpdateNews = (req, res, next) => {
     const { id } = req.params;
-    const { payload } = req.body;
+    const article  = {...req.body};
 
-    News.findOneAndUpdate({ _id: id }, { payload: payload }, function (err, newsItem) {
+    News.findOneAndUpdate({ _id: id }, article , function (err, newsItem) {
         if (err) {
             next(err);
         } else if (newsItem) {
-            res.send(`Successfully updated`);
+            res.send(newsItem);
         } else {
             next();
         }

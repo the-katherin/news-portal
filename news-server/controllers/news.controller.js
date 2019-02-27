@@ -7,7 +7,7 @@ const GetNews = (req, res, next) => {
         if (err) {
             next(err);
         } else {
-            res.json(news);
+            res.send(news);
         }
     });
 };
@@ -15,7 +15,7 @@ const GetNews = (req, res, next) => {
 const GetNewsById = (req, res, next) => {
     const { id } = req.params;
 
-    News.find({ _id: id}, function (err, newsItem) {
+    News.find({ _id: id }, function (err, newsItem) {
         if (err) {
             next(err);
         } else if (newsItem.length) {
@@ -27,7 +27,7 @@ const GetNewsById = (req, res, next) => {
 };
 
 const CreateNews = (req, res, next) => {
-    const article = {...req.body};
+    const article = { ...req.body };
 
     News.create(article, function (err, newsItem) {
         if (err) {
@@ -41,9 +41,9 @@ const CreateNews = (req, res, next) => {
 
 const UpdateNews = (req, res, next) => {
     const { id } = req.params;
-    const article  = {...req.body};
+    const article = { ...req.body };
 
-    News.findOneAndUpdate({ _id: id }, article , function (err, newsItem) {
+    News.findOneAndUpdate({ _id: id }, article, function (err, newsItem) {
         if (err) {
             next(err);
         } else if (newsItem) {

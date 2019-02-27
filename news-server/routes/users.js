@@ -10,11 +10,7 @@ router.get('/register', function (req, res) {
 
 router.get('/all', GetUsers);
 
-router.get('/:name', GetUserByName);
-
 router.post('/register', RegisterUser);
-
-router.delete('/:name', DeleteUser);
 
 router.get('/login', function (req, res) {
     res.render('login');

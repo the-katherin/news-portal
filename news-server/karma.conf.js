@@ -1,12 +1,12 @@
-module.exports = function(config) {
+module.exports = function (config) {
     config.set({
         basePath: '',
         frameworks: ['jasmine', 'browserify'],
         files: [
-            'test/*spec.js',
+            'spec/*spec.js',
             './*.js'
         ],
-        plugins :[
+        plugins: [
             'karma-browserify',
             'karma-chrome-launcher',
             'karma-jasmine',
@@ -14,7 +14,7 @@ module.exports = function(config) {
         ],
         exclude: [],
         preprocessors: {
-            'app/test/*.js': [ 'browserify' ]
+            'app/test/*.js': ['browserify']
         },
         reporters: ['progress', 'coverage'],
         port: 9876,
@@ -24,10 +24,10 @@ module.exports = function(config) {
         browsers: ['Chrome'],
         singleRun: true,
         coverageReporter: {
-        reporters: [
-            { type : 'lcov', dir : 'coverage/' },
-            { type: 'text-summary' }
-        ]
-    }
-});
+            reporters: [
+                { type: 'lcov', dir: 'coverage/' },
+                { type: 'text-summary' }
+            ]
+        }
+    });
 };

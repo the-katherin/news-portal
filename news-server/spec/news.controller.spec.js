@@ -1,5 +1,6 @@
+const nock = require('nock');
+
 const endpoint = 'http://localhost:3000/news';
-const newsLength = 3;
 
 const firstNews = {
     _id: '5c69b8261c9d44000015a0dc',
@@ -11,6 +12,8 @@ const firstNews = {
     source: 'source',
     imgType: 'image'
 };
+
+const allNews = [firstNews];
 
 const stubNewArticle = {
     author: 'me',
@@ -43,52 +46,83 @@ const {
 } = require('../controllers/news.controller');
 
 describe('newsController', () => {
-    let newArticleId;
 
     describe('GetNews', () => {
+
+        beforeEach(() => {
+            nock(endpoint)
+                .get('') // should pass correct endpoint with / or without matters!
+                .reply(200, allNews);
+        });
+
         it('should return news with 200 response code', function (done) {
             request.get(endpoint, function (error, response) {
-                expect(response.statusCode).toEqual(200);
-                expect(response.body).toBeTruthy();
 
                 const news = JSON.parse(response.body);
-                expect(news.length).toBe(newsLength);
-                expect(news).toContain(firstNews);
+
+                expect(response.statusCode).toEqual(200);
+                expect(news).toEqual(allNews);
+
                 done();
             });
         });
     });
 
     describe('GetNewsById', () => {
-        it('should return news by id 200 response code', function (done) {
-            request.get(`${endpoint}/${firstNews._id}`, function (error, response) {
-                expect(response.statusCode).toEqual(200);
-                expect(response.body).toBeTruthy();
+        describe('GetNewsById with correct id', () => {
+            beforeEach(() => {
+                nock(endpoint)
+                    .get(`/${firstNews._id}`) // slash at the beginning of path
+                    .reply(200, firstNews);
+            });
 
-                done();
+            it('should return news by id 200 response code', function (done) {
+                request.get(`${endpoint}/${firstNews._id}`, function (error, response) {
+
+                    const article = JSON.parse(response.body);
+
+                    expect(response.statusCode).toEqual(200);
+                    expect(article).toEqual(firstNews);
+
+                    done();
+                });
             });
         });
 
-        it('should return response if wrong id', function (done) {
-            request.get(`${endpoint}/555`, function (error, response) {
-                expect(response.statusCode).not.toEqual(200);
-                expect(response.body).toBeTruthy();
-                done();
+        describe('GetNewsById with incorrect id', () => {
+            beforeEach(() => {
+                nock(endpoint)
+                    .get(`/555`)
+                    .reply(404, 'Error');
+            });
+
+            it('should return response if wrong id', function (done) {
+                request.get(`${endpoint}/555`, function (error, response) {
+                    expect(response.statusCode).toEqual(404);
+                    expect(response.body).toBeTruthy();
+
+                    done();
+                });
             });
         });
     });
 
     describe('CreateNews', () => {
-        it('should return new article with 200 response code', function (done) {
-            request.post(endpoint, {form: stubNewArticle}, function (error, response) {
-                expect(response.statusCode).toEqual(200);
-                expect(response.body).toBeTruthy();
+        let postBody = JSON.stringify(stubNewArticle);
+
+        beforeEach(() => {
+            nock(endpoint)
+                .post('')
+                .reply(200, postBody);
+        });
+
+        it('should post new article and return it with 200 response code', function (done) {
+            request.post(endpoint, { form: stubNewArticle }, function (error, response) {
 
                 const article = JSON.parse(response.body);
 
-                newArticleId = article._id;
-
-                expect(article.description).toEqual(stubNewArticle.description);
+                expect(response.statusCode).toEqual(200);
+                expect(article).toEqual(stubNewArticle);
 
                 done();
             });
@@ -96,44 +130,47 @@ describe('newsController', () => {
     });
 
     describe('UpdateNews', () => {
-        it('should return news by id 200 response code', function (done) {
-            request.put(`${endpoint}/${newArticleId}`, {form: stubUpdatedArticle}, function (error, response) {
+        let putBody = JSON.stringify(stubUpdatedArticle);
+        let id = '555';
+
+        beforeEach(() => {
+            nock(endpoint)
+                .put(`/${id}`)
+                .reply(200, putBody);
+        });
+
+        it('should update article and return it with 200 response code', function (done) {
+            request.put(`${endpoint}/${id}`, { form: stubUpdatedArticle }, function (error, response) {
+                const article = JSON.parse(response.body);
+
                 expect(response.statusCode).toEqual(200);
                 expect(response.body).toBeTruthy();
+
+                expect(article).toEqual(stubUpdatedArticle);
+
+                done(); // don't forget about done!!!
             })
-                .pipe(
-                    request.get(endpoint, function (error, response) {
-                        expect(response.statusCode).toEqual(200);
-                        expect(response.body).toBeTruthy();
-
-                        const news = JSON.parse(response.body);
-
-                        expect(news.length).toBe(newsLength + 1);
-                        expect(news[newsLength].description).toBe(stubUpdatedArticle.description);
-
-                        done();
-                    }));
         });
     });
 
     describe('DeleteNews', () => {
+        let id = '152';
+
+        beforeEach(() => {
+            nock(endpoint)
+                .delete(`/${id}`)
+                .reply(200, 'Success');
+        });
+
         it('should delete news by id with 200 response code', function (done) {
-            console.log(newArticleId);
-            request.delete(`${endpoint}/${newArticleId}`, function (error, response) {
+
+            request.delete(`${endpoint}/${id}`, function (error, response) {
+
                 expect(response.statusCode).toEqual(200);
                 expect(response.body).toBeTruthy();
+
+                done();
             })
-                .pipe(
-                    request.get(endpoint, function (error, response) {
-                        expect(response.statusCode).toEqual(200);
-                        expect(response.body).toBeTruthy();
-
-                        const news = JSON.parse(response.body);
-
-                        expect(news.length).toBe(newsLength);
-
-                        done();
-                    }));
         });
     });
 });

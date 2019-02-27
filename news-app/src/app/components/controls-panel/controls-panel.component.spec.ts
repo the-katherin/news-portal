@@ -1,12 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ControlsPanelComponent } from './controls-panel.component';
-import {NO_ERRORS_SCHEMA} from "@angular/core";
-import {NewsService} from "../../services/news.service";
-import {TitleService} from "../../services/title.service";
-import {ApiService} from "../../services/api.service";
-import {FilterService} from "../../services/filter.service";
-import {of} from "rxjs";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { NewsService } from "../../services/news.service";
+import { TitleService } from "../../services/title.service";
+import { ApiService } from "../../services/api.service";
+import { FilterService } from "../../services/filter.service";
+import { of } from "rxjs";
 
 const stubChannels = [
     {
@@ -21,37 +21,37 @@ const stubChannels = [
 ];
 
 describe('ControlsPanelComponent', () => {
-  let component: ControlsPanelComponent;
-  let fixture: ComponentFixture<ControlsPanelComponent>;
-  let newsServiceSpy = jasmine.createSpyObj('NewsService', ['onChangeChannel']);
-  let apiServiceSpy = jasmine.createSpyObj('ApiService', ['getChannelsList']);
-  let titleServiceSpy = jasmine.createSpyObj('TitleService', ['onChangeTitle']);
-  let filterServiceSpy = jasmine.createSpyObj('FilterService', ['onChangeKeyword', 'onShowOnlyMyArticlesChange']);
-  apiServiceSpy.getChannelsList.and.returnValue(of(stubChannels));
+    let component: ControlsPanelComponent;
+    let fixture: ComponentFixture<ControlsPanelComponent>;
+    let newsServiceSpy = jasmine.createSpyObj('NewsService', ['onChangeChannel']);
+    let apiServiceSpy = jasmine.createSpyObj('ApiService', ['getChannelsList']);
+    let titleServiceSpy = jasmine.createSpyObj('TitleService', ['onChangeTitle']);
+    let filterServiceSpy = jasmine.createSpyObj('FilterService', ['onChangeKeyword', 'onShowOnlyMyArticlesChange']);
+    apiServiceSpy.getChannelsList.and.returnValue(of(stubChannels));
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ControlsPanelComponent ],
-        schemas: [ NO_ERRORS_SCHEMA ],
-        providers: [
-            { provide: ApiService, useValue: apiServiceSpy },
-            { provide: NewsService, useValue: newsServiceSpy },
-            { provide: TitleService, useValue: titleServiceSpy },
-            { provide: FilterService, useValue: filterServiceSpy },
-        ],
-    })
-    .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [ControlsPanelComponent],
+            schemas: [NO_ERRORS_SCHEMA],
+            providers: [
+                { provide: ApiService, useValue: apiServiceSpy },
+                { provide: NewsService, useValue: newsServiceSpy },
+                { provide: TitleService, useValue: titleServiceSpy },
+                { provide: FilterService, useValue: filterServiceSpy },
+            ],
+        })
+            .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ControlsPanelComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(ControlsPanelComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 
     describe('onChannelChange func', () => {
         it('should invoke onChangeTitle function in titleservice with appropriate name param and onChangeChannel in newsservice with input id', () => {
@@ -83,7 +83,7 @@ describe('ControlsPanelComponent', () => {
     describe('getChannels func', () => {
         it('should invoke getChannelsList function in apiService set channels and invoke onChannelChange func', () => {
             apiServiceSpy.getChannelsList.and.returnValue(of(stubChannels));
-            spyOn(component, 'onChannelChange').and.callFake((channel) => {});
+            spyOn(component, 'onChannelChange').and.callFake((channel) => { });
 
             component.getChannels();
 

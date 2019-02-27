@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NewsService } from '../../services/news.service';
-import { FilterService } from '../../services/filter.service';
 
 @Component({
     selector: 'app-single-article-view',
@@ -14,15 +13,12 @@ export class SingleArticleViewComponent implements OnInit {
     public articleSourceName: string;
 
     constructor(
-        private route: ActivatedRoute,
+        public route: ActivatedRoute,
         private newsService: NewsService,
-        private filterService: FilterService,
-
     ) { }
 
     ngOnInit() {
         const articleId = this.route.snapshot.params.id;
-        const { showOnlyMyArticles } = this.filterService;
         const articles = this.newsService.articles;
         //@ts-ignore
         this.article = articles.find(articleItem => articleItem._id === articleId);
